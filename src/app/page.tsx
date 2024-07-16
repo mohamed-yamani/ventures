@@ -9,7 +9,6 @@ import GallarySection from "./_components/sections/GallarySection";
 import PartnersSection from "./_components/sections/PartnersSection";
 import ContactUsSection from "./_components/sections/ContactUsSection";
 import FooterSection from "./_components/sections/FooterSection";
-import EventsSection from "./_components/sections/EventsSection";
 
 export default function HomePage() {
   return (
@@ -83,7 +82,7 @@ export default function HomePage() {
       <ContactUsSection />
       <FooterSection />
 
-      <EventsSection />
+      {/* <EventsSection /> */}
     </main>
   );
 }

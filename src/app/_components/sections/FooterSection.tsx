@@ -1,6 +1,8 @@
 import Link from "next/link";
 import ActionButton from "../common/button";
 import Image from "next/image";
+import { Input } from "../common/input";
+import SocialIcons from "../common/SocialIcons";
 
 const FooterSection = () => {
   return (
@@ -41,19 +43,20 @@ const FooterSection = () => {
           <div>
             <div className="flex flex-col items-start gap-3 font-montserrat text-white">
               <Link href="" target="_blank">
-                <span>
-                  {/* subscribe to newsletter */}
-                  SUBSCRIBE TO NEWSLETTER
-                </span>
+                <span>SUBSCRIBE TO NEWSLETTER</span>
               </Link>
-              {/* text field for email */}
-              <input
+              {/* <input
                 type="text"
                 placeholder="EMAIL ADDRESS"
                 className="h-8 w-56 rounded-sm bg-white p-6"
+              /> */}
+              <Input
+                type="text"
+                placeholder="EMAIL ADDRESS"
+                className="h-12 w-full rounded-md border-b border-primary bg-white px-4 py-2 placeholder-primary"
               />
-              <ActionButton className="bg-secondary font-montserrat text-white">
-                CHECK OUR PORTFOLIO
+              <ActionButton className="w-full transform bg-secondary p-6 font-montserrat text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
+                STAY UPDATED
               </ActionButton>
             </div>
           </div>
@@ -65,24 +68,17 @@ const FooterSection = () => {
             © 2024 UM6P Ventures. All rights reserved
           </p>
           <div className="flex flex-row gap-4">
-            <Image
+            <SocialIcons
               src="/assets/social_icons/instagram.png"
               alt="instagram"
-              width={30}
-              height={30}
             />
-            <Image
+
+            <SocialIcons
               src="/assets/social_icons/linkedin.png"
               alt="linkedin.png"
-              width={30}
-              height={30}
             />
-            <Image
-              src="/assets/social_icons/x.png"
-              alt="x"
-              width={30}
-              height={30}
-            />
+
+            <SocialIcons src="/assets/social_icons/x.png" alt="x" />
           </div>
         </div>
       </div>

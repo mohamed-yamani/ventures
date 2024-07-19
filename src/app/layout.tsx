@@ -18,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        {/* <footer className="bg-primary text-white"> */}
       </body>
     </html>
   );

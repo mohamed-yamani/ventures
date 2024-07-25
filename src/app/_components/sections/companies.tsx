@@ -1,32 +1,71 @@
-import ActionButton from "../common/button";
-import CompanyImage from "../common/company_image";
+"use client";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "~/components/ui/carousel";
+
 import Subtitle from "../common/subtitle";
 import Title from "../common/title";
+import Image from "next/image";
 
 const Companies = () => {
   return (
-    <div className="flex h-[80vh] w-full flex-col items-center justify-evenly bg-white">
-      <div className="container flex w-full flex-col bg-white text-center">
+    <div className="mb-10 mt-10 flex w-full flex-col items-center justify-between gap-8 bg-white">
+      <div className="container flex w-full flex-col text-center">
         <Title>OUR PORTFOLIO</Title>
         <Subtitle>Discover the companies we’ve funded</Subtitle>
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <CompanyImage src="/assets/img1.png" alt="Company 1" />
-        <CompanyImage src="/assets/img2.png" alt="Company 2" />
-        <CompanyImage src="/assets/img3.png" alt="Company 3" />
-        <CompanyImage src="/assets/img4.png" alt="Company 4" />
-        <CompanyImage src="/assets/img5.png" alt="Company 5" />
-        <CompanyImage src="/assets/img6.png" alt="Company 6" />
-        <CompanyImage src="/assets/img7.png" alt="Company 7" />
-        <CompanyImage src="/assets/img8.png" alt="Company 8" />
-        <CompanyImage src="/assets/img9.png" alt="Company 9" />
-        <CompanyImage src="/assets/img10.png" alt="Company 10" />
-        <CompanyImage src="/assets/img11.png" alt="Company 11" />
-        <CompanyImage src="/assets/img12.png" alt="Company 12" />
-      </div>
-      <ActionButton>CHECK OUR PORTFOLIO</ActionButton>
+      <CarouselSize />
     </div>
   );
 };
+
+import * as React from "react";
+import { Card, CardContent } from "~/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
+
+export function CarouselSize() {
+  return (
+    <Carousel
+      opts={{
+        align: "center",
+        duration: 500,
+        loop: true,
+      }}
+      plugins={[
+        Autoplay({
+          delay: 3000,
+          stopOnFocusIn: false,
+          stopOnInteraction: false,
+          stopOnMouseEnter: false,
+          playOnInit: true,
+        }),
+      ]}
+      className="flex w-screen"
+    >
+      <CarouselContent>
+        {Array.from({ length: 12 }).map((_, index) => (
+          <CarouselItem
+            key={index}
+            className="basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/6"
+          >
+            <Card className="flex h-32 w-72 items-center justify-center rounded-none bg-gray-300">
+              <CardContent className="flex h-32 w-64 items-center justify-center p-6">
+                <Image
+                  src={`/assets/img${index + 1}.png`}
+                  alt={`Company ${index + 1}`}
+                  width={80}
+                  height={50}
+                />
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  );
+}
 
 export default Companies;

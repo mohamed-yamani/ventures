@@ -92,6 +92,17 @@ const config = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        // New Peninim MT font
+        peninim: ['Peninim MT', 'serif'],
+        merriweather: ['Merriweather', 'serif'],
+      },
+      width: {
+        '0.25': '0.0625rem',
+        '0.125': '0.03125rem',
+      },
+      height: {
+        '0.25': '0.0625rem',
+        '0.125': '0.03125rem',
       },
     },
   },

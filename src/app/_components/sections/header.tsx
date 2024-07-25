@@ -12,8 +12,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "~/components/ui/sheet";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, Search, ArrowUpRight } from "lucide-react";
 import { ROUTES } from "~/utils/constants/routes";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
+import ContactUsSection from "./ContactUsSection";
+import SearchSection from "./searchSection";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,22 +36,24 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-30 hidden w-screen transition-colors duration-300 md:justify-center lg:flex lg:justify-center ${
+      className={`fixed z-30 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 md:justify-center lg:flex lg:justify-center ${
         isScrolled
           ? "bg-gradient-to-r from-white to-primary opacity-95"
           : "bg-transparent"
       }`}
     >
-      <div className="container flex flex-row items-center justify-between py-4">
-        <Image
-          src={isScrolled ? "/assets/ventures.png" : "/assets/ventures.png"}
-          alt="Create T3 App Logo"
-          width={80}
-          height={80}
-        />
+      <div className="container flex flex-row items-center justify-between py-2">
+        <Link href={ROUTES.HOME}>
+          <Image
+            src="/assets/ventures.png"
+            alt="Create T3 App Logo"
+            width={200}
+            height={120}
+          />
+        </Link>
         <div
-          className={`grid grid-cols-1 gap-4 sm:grid-cols-5 md:gap-8 ${
-            isScrolled ? "text-white" : "text-primary"
+          className={`hidden grid-cols-1 gap-4 text-center sm:grid-cols-3 md:grid md:gap-8 ${
+            isScrolled ? "text-white" : "text-white"
           }`}
         >
           <Link href={ROUTES.ABOUT}>
@@ -56,52 +61,162 @@ export default function Header() {
               ABOUT US
             </span>
           </Link>
-          <Link href="https://create.t3.gg/en/introduction" target="_blank">
+          <Link href={ROUTES.TEAM}>
+            <span className="transition-all hover:text-orange-500 hover:underline">
+              TEAM
+            </span>
+          </Link>
+          <Link href={ROUTES.PORTFOLIO}>
             <span className="transition-all hover:text-orange-500 hover:underline">
               PORTFOLIO
-            </span>
-          </Link>
-          <Link href="https://create.t3.gg/en/introduction" target="_blank">
-            <span className="transition-all hover:text-orange-500 hover:underline">
-              EVENTS
-            </span>
-          </Link>
-          <Link href="https://create.t3.gg/en/introduction" target="_blank">
-            <span className="transition-all hover:text-orange-500 hover:underline">
-              NEWS
-            </span>
-          </Link>
-          <Link href="https://create.t3.gg/en/introduction" target="_blank">
-            <span className="transition-all hover:text-orange-500 hover:underline">
-              RESOURCES
             </span>
           </Link>
         </div>
 
         {/* menu */}
-        <Sheet>
-          <SheetTrigger>
-            <MenuIcon
-              size={24}
-              className={`${
-                isScrolled ? "text-white" : "text-primary"
-              } cursor-pointer`}
-            />
-          </SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-              <div className="flex justify-end gap-4">
-                <Button className="bg-primary text-white">Delete</Button>
-                <Button className="bg-secondary text-white">Cancel</Button>
+
+        <div className="flex flex-row gap-5">
+          {/* <div className="flex w-12 justify-center rounded-full border border-white p-1">
+            <Search size={16} className="text-white" />
+          </div> */}
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="flex w-12 cursor-pointer justify-center rounded-full border border-white p-1">
+                <Search size={16} className="text-white" />
               </div>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
+            </DialogTrigger>
+            <DialogContent
+              className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary font-montserrat text-black"
+              closeIconClassName="text-white size-6"
+            >
+              <SearchSection />
+            </DialogContent>
+          </Dialog>
+
+          <Sheet modal={false}>
+            <SheetTrigger>
+              <MenuIcon
+                size={24}
+                className={`${
+                  isScrolled ? "text-white" : "text-white"
+                } cursor-pointer`}
+              />
+            </SheetTrigger>
+
+            <SheetContent className="glassmorphism rounded-none border border-black border-opacity-10 bg-black bg-opacity-30">
+              <SheetHeader className="flex h-full w-full flex-col items-start justify-between gap-4">
+                <div className="mt-24 flex w-full flex-col items-start justify-center gap-4">
+                  <Link
+                    href={ROUTES.ABOUT}
+                    className="flex w-full flex-row items-center justify-between md:hidden"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      ABOUT US
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  {/* devider  */}
+                  <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
+                  <Link
+                    href={ROUTES.TEAM}
+                    className="flex w-full flex-row items-center justify-between md:hidden"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      TEAM
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  {/* devider  */}
+                  <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
+                  <Link
+                    href={ROUTES.PORTFOLIO}
+                    className="flex w-full flex-row items-center justify-between md:hidden"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      PORTFOLIO
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
+                  {/* network */}
+                  <Link
+                    href={ROUTES.PORTFOLIO}
+                    className="flex w-full flex-row items-center justify-between"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      NETWORK
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  <div className="h-0.125 w-full -translate-y-2 bg-white" />
+                  {/* resources */}
+                  <Link
+                    href={ROUTES.PORTFOLIO}
+                    className="flex w-full flex-row items-center justify-between"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      RESOURCES
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  <div className="h-0.125 w-full -translate-y-2 bg-white" />
+                  {/* news */}
+                  <Link
+                    href={ROUTES.PORTFOLIO}
+                    className="flex w-full flex-row items-center justify-between"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      NEWS
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  <div className="h-0.125 w-full -translate-y-2 bg-white" />
+                  {/* events */}
+                  <Link
+                    href={ROUTES.PORTFOLIO}
+                    className="flex w-full flex-row items-center justify-between"
+                  >
+                    <span className="text-white transition-all hover:text-orange-500">
+                      EVENTS
+                    </span>
+                    <div className="h-4 w-4">
+                      <ArrowUpRight size={24} className="text-white" />
+                    </div>
+                  </Link>
+                  <div className="h-0.125 w-full -translate-y-2 bg-white" />
+                </div>
+
+                <div className="flex w-full -translate-y-10 flex-row items-center justify-between gap-4 text-white">
+                  <Link href={ROUTES.CONTACT}>
+                    <span className="underline transition-all hover:text-orange-500">
+                      CONTACT US
+                    </span>
+                  </Link>
+                  <Image
+                    src="/assets/ventures.png"
+                    alt="Create T3 App Logo"
+                    width={120}
+                    height={60}
+                    className="transition-all hover:scale-110"
+                  />
+                </div>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+        </div>
         {/* search */}
       </div>
     </header>

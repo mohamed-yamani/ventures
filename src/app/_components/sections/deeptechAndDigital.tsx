@@ -23,7 +23,7 @@ const DeeptechAndDigital = () => {
               and well-being of its populations.`}
             </p>
             <Button className="w-4/12 rounded-none bg-primary font-montserrat text-white">
-              Learn More
+              LEARN MORE
             </Button>
           </div>
           <div className="order-1 flex flex-col items-end justify-center gap-5 p-10 text-center md:order-2">
@@ -59,7 +59,7 @@ const DeeptechAndDigital = () => {
               and Africa as leaders in the global digital economy.
             </p>
             <Button className="w-4/12 rounded-none bg-primary font-montserrat text-white">
-              Learn More
+              LEARN MORE
             </Button>
           </div>
         </div>

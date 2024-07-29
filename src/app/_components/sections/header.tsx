@@ -3,19 +3,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "~/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "~/components/ui/sheet";
 import { MenuIcon, Search, ArrowUpRight } from "lucide-react";
 import { ROUTES } from "~/utils/constants/routes";
 import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
-import ContactUsSection from "./ContactUsSection";
 import SearchSection from "./searchSection";
 
 export default function Header() {
@@ -49,6 +45,7 @@ export default function Header() {
             alt="Create T3 App Logo"
             width={200}
             height={120}
+            className="-translate-x-4 transition-all hover:scale-110"
           />
         </Link>
         <div
@@ -56,7 +53,10 @@ export default function Header() {
             isScrolled ? "text-white" : "text-white"
           }`}
         >
-          <Link href={ROUTES.ABOUT}>
+          <Link
+            href={ROUTES.ABOUT}
+            className="transition-all hover:scale-110 hover:text-orange-500 hover:underline"
+          >
             <span className="transition-all hover:text-orange-500 hover:underline">
               ABOUT US
             </span>
@@ -73,13 +73,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* menu */}
-
         <div className="flex flex-row gap-5">
-          {/* <div className="flex w-12 justify-center rounded-full border border-white p-1">
-            <Search size={16} className="text-white" />
-          </div> */}
-
           <Dialog>
             <DialogTrigger asChild>
               <div className="flex w-12 cursor-pointer justify-center rounded-full border border-white p-1">
@@ -131,7 +125,6 @@ export default function Header() {
                       <ArrowUpRight size={24} className="text-white" />
                     </div>
                   </Link>
-                  {/* devider  */}
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.PORTFOLIO}
@@ -145,7 +138,6 @@ export default function Header() {
                     </div>
                   </Link>
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
-                  {/* network */}
                   <Link
                     href={ROUTES.PORTFOLIO}
                     className="flex w-full flex-row items-center justify-between"

@@ -48,11 +48,10 @@ const ContactUsSection = () => {
               placeholder="EMAIL ADDRESS"
               className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
             />
+            <button className="w-full translate-y-2 rounded-none bg-secondary p-2 font-montserrat font-normal text-white">
+              STAY UPDATED
+            </button>
           </div>
-
-          <button className="w-1/2 rounded-none bg-white p-2 font-montserrat font-normal text-primary">
-            STAY UPDATED
-          </button>
         </form>
       </div>
     </div>

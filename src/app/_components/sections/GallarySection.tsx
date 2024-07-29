@@ -1,12 +1,20 @@
 import Image from "next/image";
 import Button from "../common/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "~/components/ui/carousel";
+import { Card, CardContent } from "~/components/ui/card";
 
 const GallarySection = () => {
   return (
     <div className="relative w-screen bg-gradient-to-r from-white to-[#cbdeed]">
       <div className="container mt-20 grid grid-cols-1 items-center justify-center gap-16 sm:grid-cols-7">
         <div className="col-span-4 flex flex-col items-start justify-center gap-10 py-10">
-          <div className="h-1 w-20 bg-secondary" />
+          <div className="h-1 w-12 translate-y-10 bg-secondary" />
           <h3 className="font-montserrat text-2xl text-primary">
             LOREM IPSUM EXAMPLE
           </h3>
@@ -20,7 +28,7 @@ const GallarySection = () => {
             LEARN MORE ABOUT US
           </Button>
         </div>
-        <div className="col-span-3 grid min-h-[60vh] w-full grid-flow-col grid-rows-1 gap-4 py-6 md:grid-rows-7">
+        <div className="col-span-3 hidden min-h-[60vh] w-full grid-flow-col grid-rows-1 gap-4 py-6 md:grid md:grid-rows-7">
           <div className="relative col-span-2 row-span-4 flex items-start justify-end">
             <div className="relative h-4/6 w-4/6 -translate-y-4 transform bg-primary md:h-3/6 md:w-3/6 lg:h-4/6 lg:w-4/6"></div>
             <div className="absolute flex h-full w-3/5 items-center justify-center md:w-2/5 lg:w-3/5">
@@ -68,6 +76,108 @@ const GallarySection = () => {
           </div>
         </div>
       </div>
+
+      {/* <div className="container flex w-full flex-col items-start justify-center gap-5 md:hidden">
+        <div className="... relative aspect-square w-full">
+          <Image
+            src="/assets/gallary/img2.png"
+            alt="ventures"
+            fill={true}
+            layout="container"
+            className="object-cover"
+          />
+
+          <Image
+            src="/assets/gallary/img3.png"
+            alt="ventures"
+            fill={true}
+            layout="container"
+            className="object-cover"
+          />
+
+          <Image
+            src="/assets/gallary/img4.png"
+            alt="ventures"
+            fill={true}
+            layout="container"
+            className="object-cover"
+          />
+
+          <Image
+            src="/assets/gallary/img1.png"
+            alt="ventures"
+            fill={true}
+            layout="container"
+            className="object-cover"
+          />
+        </div>
+      </div> */}
+
+      <Carousel className="container w-full pb-5 md:hidden">
+        <CarouselContent>
+          {/* {Array.from({ length: 4 }).map((_, index) => (
+            <CarouselItem key={index}>
+              <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
+                <Image
+                  src={`/assets/gallary/img${index + 1}.png`}
+                  alt={`ventures ${index}`}
+                  fill={true}
+                  layout="container"
+                  className="object-cover"
+                />
+              </div>
+            </CarouselItem>
+          ))} */}
+
+          <CarouselItem key="1">
+            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
+              <Image
+                src={`/assets/gallary/img1.png`}
+                alt={`ventures 1`}
+                fill={true}
+                layout="container"
+                className="object-cover"
+              />
+            </div>
+          </CarouselItem>
+          <CarouselItem key="2">
+            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
+              <Image
+                src={`/assets/gallary/img1.png`}
+                alt={`ventures 1`}
+                fill={true}
+                layout="container"
+                className="object-cover"
+              />
+            </div>
+          </CarouselItem>
+
+          <CarouselItem key="3">
+            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
+              <Image
+                src={`/assets/gallary/img1.png`}
+                alt={`ventures 1`}
+                fill={true}
+                layout="container"
+                className="object-cover"
+              />
+            </div>
+          </CarouselItem>
+          <CarouselItem key="4">
+            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
+              <Image
+                src={`/assets/gallary/img1.png`}
+                alt={`ventures 1`}
+                fill={true}
+                layout="container"
+                className="object-cover"
+              />
+            </div>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-10 top-1/2 -translate-y-1/2 transform" />
+        <CarouselNext className="absolute right-10 top-1/2 -translate-y-1/2 transform" />
+      </Carousel>
     </div>
   );
 };

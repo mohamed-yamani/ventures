@@ -18,7 +18,7 @@ const ContactUsSection = () => {
         <form className="flex flex-col gap-4">
           <div className="flex flex-col gap-2"></div>
           <p>
-            <span className="font-montserrat font-normal text-white">
+            <span className="font-normal text-white">
               SUBSCRIBE TO UM6P VENTURES NEWSLETTER
             </span>
           </p>
@@ -48,7 +48,7 @@ const ContactUsSection = () => {
               placeholder="EMAIL ADDRESS"
               className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
             />
-            <button className="w-full translate-y-2 rounded-none bg-secondary p-2 font-montserrat font-normal text-white">
+            <button className="w-full translate-y-2 rounded-none bg-secondary p-2 font-normal text-white">
               STAY UPDATED
             </button>
           </div>

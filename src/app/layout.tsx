@@ -1,8 +1,10 @@
 import "~/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
-import { type Metadata } from "next";
+import { Montserrat } from "next/font/google";
+
 import Header from "./_components/sections/header";
+
+import { type Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -10,11 +12,13 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const font = Montserrat({ subsets: ["latin"] });
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${font.className}`}>
       <body>
         <Header />
         {children}

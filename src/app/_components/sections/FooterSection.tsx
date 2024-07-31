@@ -20,15 +20,15 @@ const FooterSection = () => {
                 height={120}
                 className="-translate-x-4 object-cover"
               />
-              <div className="h-1 w-44 bg-secondary font-montserrat font-semibold"></div>
-              <p className="font-montserrat font-normal text-white">
+              <div className="h-1 w-44 bg-secondary font-semibold"></div>
+              <p className="font-normal text-white">
                 BUILDING THE FUTURE OF AFRICA
               </p>
             </div>
           </div>
           <div className="flex flex-col items-center justify-start">
-            <div className="flex flex-col items-start gap-3 font-montserrat text-white">
-              <h1 className="pb-4 font-montserrat text-lg text-white">
+            <div className="flex flex-col items-start gap-3 text-white">
+              <h1 className="pb-4 text-lg text-white">
                 <span>USEFUL LINKS</span>
               </h1>
               <Link
@@ -47,19 +47,19 @@ const FooterSection = () => {
             </div>
           </div>
           <div>
-            <div className="flex flex-col items-start gap-3 font-montserrat text-white">
+            <div className="flex flex-col items-start gap-3 text-white">
               <Link href="" target="_blank">
                 <span>UM6P VENTURES NEWSLETTER</span>
               </Link>
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <ActionButton className="transform bg-secondary p-6 font-montserrat text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
+                  <ActionButton className="transform bg-secondary p-6 text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
                     SUBSCRIBE TO NEWSLETTER
                   </ActionButton>
                 </DialogTrigger>
                 <DialogContent
-                  className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary font-montserrat text-black"
+                  className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
                   closeIconClassName="text-white size-6"
                 >
                   <ContactUsSection />
@@ -69,7 +69,7 @@ const FooterSection = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-white bg-primary font-montserrat text-white">
+      <div className="border-t border-white bg-primary text-white">
         <div className="container flex flex-row items-center justify-between py-6">
           <p className="font-normal">
             © 2024 UM6P Ventures. All rights reserved

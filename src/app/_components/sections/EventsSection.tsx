@@ -45,7 +45,7 @@ export function CarouselSpacing() {
                     objectFit="cover"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-white px-14 py-4 font-montserrat">
+                <div className="absolute bottom-0 left-0 right-0 bg-white px-14 py-4">
                   <h3 className="text-sm font-light text-primary">
                     DIGITAL SUMMIT
                   </h3>
@@ -53,7 +53,7 @@ export function CarouselSpacing() {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-white px-14 py-4 font-montserrat">
+            <div className="absolute bottom-0 left-0 right-0 bg-white px-14 py-4">
               <p>check event</p>
             </div>
           </CarouselItem>
@@ -62,7 +62,7 @@ export function CarouselSpacing() {
       <CarouselPrevious className="absolute left-20 z-10 flex h-10 w-10 translate-y-60 items-center justify-center rounded-none bg-blue-500" />
       <CarouselNext className="absolute left-36 z-10 flex h-10 w-10 translate-y-60 items-center justify-center rounded-none bg-red-500" />
       <div className="absolute -bottom-[70px] right-20 z-0 flex h-10 w-[10vw] flex-row items-start justify-start">
-        <ActionButton className="w-full bg-primary font-montserrat text-white">
+        <ActionButton className="w-full bg-primary text-white">
           ALL EVENTS
         </ActionButton>
       </div>

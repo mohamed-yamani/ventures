@@ -7,7 +7,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel";
-import { Card, CardContent } from "~/components/ui/card";
 
 const GallarySection = () => {
   return (
@@ -15,16 +14,14 @@ const GallarySection = () => {
       <div className="container mt-20 grid grid-cols-1 items-center justify-center gap-16 sm:grid-cols-7">
         <div className="col-span-4 flex flex-col items-start justify-center gap-10 py-10">
           <div className="h-1 w-12 translate-y-10 bg-secondary" />
-          <h3 className="font-montserrat text-2xl text-primary">
-            LOREM IPSUM EXAMPLE
-          </h3>
-          <p className="text-justify font-montserrat text-lg text-primary">
+          <h3 className="text-2xl text-primary">LOREM IPSUM EXAMPLE</h3>
+          <p className="text-justify text-lg text-primary">
             UM6P Ventures is connected to a global network of universities,
             subject matter experts. f universities, subject matter experts, UM6P
             Ventures is connected to a global network of universities, subject
             matter experts. f universities, subject matter experts
           </p>
-          <Button className="transform bg-primary p-6 font-montserrat text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
+          <Button className="transform bg-primary p-6 text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
             LEARN MORE ABOUT US
           </Button>
         </div>
@@ -115,9 +112,9 @@ const GallarySection = () => {
 
       <Carousel className="container w-full pb-5 md:hidden">
         <CarouselContent>
-          {/* {Array.from({ length: 4 }).map((_, index) => (
+          {Array.from({ length: 4 }).map((_, index) => (
             <CarouselItem key={index}>
-              <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
+              <div className="bg-red flex aspect-square items-center justify-center p-6">
                 <Image
                   src={`/assets/gallary/img${index + 1}.png`}
                   alt={`ventures ${index}`}
@@ -127,53 +124,7 @@ const GallarySection = () => {
                 />
               </div>
             </CarouselItem>
-          ))} */}
-
-          <CarouselItem key="1">
-            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
-              <Image
-                src={`/assets/gallary/img1.png`}
-                alt={`ventures 1`}
-                fill={true}
-                layout="container"
-                className="object-cover"
-              />
-            </div>
-          </CarouselItem>
-          <CarouselItem key="2">
-            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
-              <Image
-                src={`/assets/gallary/img1.png`}
-                alt={`ventures 1`}
-                fill={true}
-                layout="container"
-                className="object-cover"
-              />
-            </div>
-          </CarouselItem>
-
-          <CarouselItem key="3">
-            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
-              <Image
-                src={`/assets/gallary/img1.png`}
-                alt={`ventures 1`}
-                fill={true}
-                layout="container"
-                className="object-cover"
-              />
-            </div>
-          </CarouselItem>
-          <CarouselItem key="4">
-            <div className="flex aspect-square items-center justify-center bg-red-500 p-6">
-              <Image
-                src={`/assets/gallary/img1.png`}
-                alt={`ventures 1`}
-                fill={true}
-                layout="container"
-                className="object-cover"
-              />
-            </div>
-          </CarouselItem>
+          ))}
         </CarouselContent>
         <CarouselPrevious className="absolute left-10 top-1/2 -translate-y-1/2 transform" />
         <CarouselNext className="absolute right-10 top-1/2 -translate-y-1/2 transform" />

@@ -10,7 +10,7 @@ const PartnersSection = () => {
         <div className="container flex w-full flex-col items-center justify-center gap-4 pb-16">
           <Title>OUR PORTFOLIO</Title>
           <Subtitle>UM6P Ventures partners</Subtitle>
-          <p className="w-3/5 text-center font-montserrat font-medium text-black">
+          <p className="w-3/5 text-center font-medium text-black">
             UM6P Ventures is connected to a global network of universities,
             subject matter experts, incubators, accelerators, and other capital
             investors in Africa. UM6P Ventures is connected to a global network

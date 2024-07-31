@@ -81,7 +81,7 @@ export default function Header() {
               </div>
             </DialogTrigger>
             <DialogContent
-              className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary font-montserrat text-black"
+              className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
               closeIconClassName="text-white size-6"
             >
               <SearchSection />

@@ -1,5 +1,9 @@
 "use client";
 
+import * as React from "react";
+import { Card, CardContent } from "~/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
+
 import {
   Carousel,
   CarouselContent,
@@ -13,18 +17,14 @@ import Image from "next/image";
 const Companies = () => {
   return (
     <div className="mb-10 mt-10 flex w-full flex-col items-center justify-between gap-8 bg-white">
-      <div className="container flex w-full flex-col text-center">
-        <Title>OUR PORTFOLIO</Title>
-        <Subtitle>Discover the companies we’ve funded</Subtitle>
+      <div className="container flex w-full flex-col pb-16 pt-16 text-center">
+        <Title>COMPANIES</Title>
+        <Subtitle>Companies We’ve Funded</Subtitle>
       </div>
       <CarouselSize />
     </div>
   );
 };
-
-import * as React from "react";
-import { Card, CardContent } from "~/components/ui/card";
-import Autoplay from "embla-carousel-autoplay";
 
 export function CarouselSize() {
   return (

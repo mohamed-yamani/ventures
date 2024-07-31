@@ -17,27 +17,17 @@ const SearchSection = () => {
           />
         </div>
 
-        <Button className="w-full rounded-none bg-secondary font-montserrat font-normal text-primary text-white">
+        <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white">
           SEARCH
         </Button>
       </div>
-      <div className="font-montserrat font-normal text-white">SUGGESTIONS</div>
+      <div className="font-normal text-white">SUGGESTIONS</div>
       <div className="flex flex-row items-center justify-start gap-4 py-9">
-        <Badge className="bg-white font-montserrat font-normal text-primary">
-          Startups
-        </Badge>
-        <Badge className="bg-white font-montserrat font-normal text-primary">
-          Deep Tech
-        </Badge>
-        <Badge className="bg-white font-montserrat font-normal text-primary">
-          Focus Areas
-        </Badge>
-        <Badge className="bg-white font-montserrat font-normal text-primary">
-          Team
-        </Badge>
-        <Badge className="bg-white font-montserrat font-normal text-primary">
-          Portfolio
-        </Badge>
+        <Badge className="bg-white font-normal text-primary">Startups</Badge>
+        <Badge className="bg-white font-normal text-primary">Deep Tech</Badge>
+        <Badge className="bg-white font-normal text-primary">Focus Areas</Badge>
+        <Badge className="bg-white font-normal text-primary">Team</Badge>
+        <Badge className="bg-white font-normal text-primary">Portfolio</Badge>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ type SubtitleProps = {
 };
 
 const Subtitle = ({ children }: SubtitleProps) => {
-  return <h2 className="text-3xl font-normal text-primary">{children}</h2>;
+  return <h2 className="text-3xl font-semibold text-primary">{children}</h2>;
 };
 
 export default Subtitle;

@@ -19,12 +19,11 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
+
+    // Set the initial state based on the scroll position
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,20 +31,18 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-30 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 md:justify-center lg:flex lg:justify-center ${
-        isScrolled
-          ? "bg-gradient-to-r from-white to-primary opacity-95"
-          : "bg-transparent"
+      className={`fixed top-0 z-30 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 ${
+        isScrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <div className="container flex flex-row items-center justify-between py-2">
+      <div className="container flex flex-row items-center justify-between py-2 transition-all duration-300">
         <Link href={ROUTES.HOME}>
           <Image
             src="/assets/ventures.png"
             alt="Create T3 App Logo"
             width={200}
             height={120}
-            className="-translate-x-4 transition-all hover:scale-110"
+            className="-translate-x-4 transition-transform duration-300 hover:scale-110"
           />
         </Link>
         <div
@@ -55,19 +52,25 @@ export default function Header() {
         >
           <Link
             href={ROUTES.ABOUT}
-            className="transition-all hover:scale-110 hover:text-orange-500 hover:underline"
+            className="transition-transform duration-300 hover:scale-110 hover:text-orange-500 hover:underline"
           >
-            <span className="transition-all hover:text-orange-500 hover:underline">
+            <span className="transition-all duration-300 hover:text-orange-500 hover:underline">
               ABOUT US
             </span>
           </Link>
-          <Link href={ROUTES.TEAM}>
-            <span className="transition-all hover:text-orange-500 hover:underline">
+          <Link
+            href={ROUTES.TEAM}
+            className="transition-transform duration-300 hover:scale-110 hover:text-orange-500 hover:underline"
+          >
+            <span className="transition-all duration-300 hover:text-orange-500 hover:underline">
               TEAM
             </span>
           </Link>
-          <Link href={ROUTES.PORTFOLIO}>
-            <span className="transition-all hover:text-orange-500 hover:underline">
+          <Link
+            href={ROUTES.PORTFOLIO}
+            className="transition-transform duration-300 hover:scale-110 hover:text-orange-500 hover:underline"
+          >
+            <span className="transition-all duration-300 hover:text-orange-500 hover:underline">
               PORTFOLIO
             </span>
           </Link>
@@ -76,7 +79,7 @@ export default function Header() {
         <div className="flex flex-row gap-5">
           <Dialog>
             <DialogTrigger asChild>
-              <div className="flex w-12 cursor-pointer justify-center rounded-full border border-white p-1">
+              <div className="flex w-12 cursor-pointer justify-center rounded-full border border-white p-1 transition-transform duration-300 hover:scale-110">
                 <Search size={16} className="text-white" />
               </div>
             </DialogTrigger>
@@ -94,7 +97,7 @@ export default function Header() {
                 size={24}
                 className={`${
                   isScrolled ? "text-white" : "text-white"
-                } cursor-pointer`}
+                } cursor-pointer transition-transform duration-300 hover:scale-110`}
               />
             </SheetTrigger>
 
@@ -103,7 +106,7 @@ export default function Header() {
                 <div className="mt-24 flex w-full flex-col items-start justify-center gap-4">
                   <Link
                     href={ROUTES.ABOUT}
-                    className="flex w-full flex-row items-center justify-between md:hidden"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110 md:hidden"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       ABOUT US
@@ -112,11 +115,10 @@ export default function Header() {
                       <ArrowUpRight size={24} className="text-white" />
                     </div>
                   </Link>
-                  {/* devider  */}
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.TEAM}
-                    className="flex w-full flex-row items-center justify-between md:hidden"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110 md:hidden"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       TEAM
@@ -128,7 +130,7 @@ export default function Header() {
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between md:hidden"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110 md:hidden"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       PORTFOLIO
@@ -140,7 +142,7 @@ export default function Header() {
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       NETWORK
@@ -150,10 +152,9 @@ export default function Header() {
                     </div>
                   </Link>
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
-                  {/* resources */}
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       RESOURCES
@@ -163,10 +164,9 @@ export default function Header() {
                     </div>
                   </Link>
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
-                  {/* news */}
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       NEWS
@@ -176,10 +176,9 @@ export default function Header() {
                     </div>
                   </Link>
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
-                  {/* events */}
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
                   >
                     <span className="text-white transition-all hover:text-orange-500">
                       EVENTS
@@ -193,7 +192,7 @@ export default function Header() {
 
                 <div className="flex w-full -translate-y-10 flex-row items-center justify-between gap-4 text-white">
                   <Link href={ROUTES.CONTACT}>
-                    <span className="underline transition-all hover:text-orange-500">
+                    <span className="underline transition-transform duration-300 hover:scale-110 hover:text-orange-500">
                       CONTACT US
                     </span>
                   </Link>
@@ -202,7 +201,7 @@ export default function Header() {
                     alt="Create T3 App Logo"
                     width={120}
                     height={60}
-                    className="transition-all hover:scale-110"
+                    className="transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               </SheetHeader>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -11,46 +14,64 @@ import Image from "next/image";
 import { Card, CardContent } from "~/components/ui/card";
 
 export default function LandingPage() {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight
+      ) {
+        if (carouselRef.current) {
+          const nextScrollPosition =
+            carouselRef.current.scrollLeft + window.innerWidth;
+          carouselRef.current.scrollTo({
+            left: nextScrollPosition,
+            behavior: "smooth",
+          });
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const carouselOptions = {
+    align: "center" as const,
+    loop: true,
+  };
+
+  const renderCarouselItems = () => {
+    return Array.from({ length: 10 }).map((_, index) => (
+      <CarouselItem key={index}>
+        <Card>
+          <CardContent className="flex h-screen w-screen items-center justify-center p-0">
+            <div className="relative h-full w-full">
+              <Image
+                src={`/assets/landing/${index + 1}.jpg`}
+                alt={`Company ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+              />
+              <div className="absolute flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-50 text-white" />
+            </div>
+          </CardContent>
+        </Card>
+      </CarouselItem>
+    ));
+  };
+
   return (
     <main className="relative flex h-screen w-full flex-col items-center justify-center bg-gradient-to-r from-white to-[#cbdeed] md:flex-row">
-      {/* <div className="absolute flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-10 text-center">
-        <h1 className="text-5xl font-bold text-white">
-          Welcome to the ventures App
-        </h1>
-        <p className="text-lg text-gray-600">
-          The ventures app is a platform that helps you to manage your projects
-        </p>
-        <button className="mt-4 rounded-lg bg-primary px-4 py-2 text-white">
-          Get Started
-        </button>
-      </div> */}
-
       <div className="flex h-screen flex-col items-center justify-center text-center">
-        {/* <video className="h-full w-full object-cover" autoPlay muted loop>
-          <source
-            src="https://videos.pexels.com/video-files/1851768/1851768-uhd_3840_2160_30fps.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video> */}
-        <Carousel className="m-0 w-screen">
+        <Carousel
+          ref={carouselRef}
+          opts={carouselOptions}
+          className="m-0 w-screen"
+        >
           <CarouselContent className="flex w-full">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <CarouselItem key={index}>
-                <Card>
-                  <CardContent className="flex h-screen w-screen items-center justify-center p-0">
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={`/assets/landing/${index + 1}.jpg`}
-                        alt={`Company ${index + 1}`}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
+            {renderCarouselItems()}
           </CarouselContent>
           <CarouselPrevious className="containers absolute left-6 top-1/2 z-50 -translate-y-1/2 md:left-48" />
           <CarouselNext className="absolute right-6 top-1/2 z-50 -translate-y-1/2 transform md:right-48" />
@@ -60,24 +81,24 @@ export default function LandingPage() {
             <div className="flex flex-row gap-4">
               <SocialIcons
                 src="/assets/social_icons/instagram.png"
-                alt="instagram"
+                alt="Instagram"
               />
-
               <SocialIcons
                 src="/assets/social_icons/linkedin.png"
-                alt="linkedin.png"
+                alt="LinkedIn"
               />
-
-              <SocialIcons src="/assets/social_icons/play.png" alt="x" />
-              <SocialIcons src="/assets/social_icons/x.png" alt="x" />
-
-              <SocialIcons src="/assets/social_icons/facebook.png" alt="x" />
+              <SocialIcons src="/assets/social_icons/play.png" alt="Play" />
+              <SocialIcons src="/assets/social_icons/x.png" alt="X" />
+              <SocialIcons
+                src="/assets/social_icons/facebook.png"
+                alt="Facebook"
+              />
             </div>
             <Button className="rounded-full bg-white px-4 py-2 text-primary">
               <div className="flex flex-row items-center gap-2">
                 <Image
-                  src={"/assets/social_icons/send.png"}
-                  alt={"send"}
+                  src="/assets/social_icons/send.png"
+                  alt="Send"
                   width={20}
                   height={20}
                   className="transform cursor-pointer transition duration-300 hover:scale-110"

@@ -82,10 +82,10 @@ export function CarouselSize() {
         {images.map((src, index) => (
           <CarouselItem
             key={index}
-            className="flex-shrink-0 basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/6"
+            className="flex-shrink-0 basis-1/2 p-1 md:basis-1/3 lg:basis-1/5 xl:basis-1/6"
           >
             <Card className="group flex h-32 w-full cursor-pointer items-center justify-center rounded-none bg-gray-100 transition-all duration-300 hover:scale-105 hover:bg-primary">
-              <CardContent className="flex h-32 w-full items-center justify-center p-6">
+              <CardContent className="flex h-32 w-full items-center justify-center p-0">
                 <div className="relative h-20 w-32">
                   <Image
                     src={src}

@@ -3,16 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { MenuIcon, Search, ArrowUpRight } from "lucide-react";
+import { ROUTES } from "~/utils/constants/routes";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
+import SearchSection from "./searchSection";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTrigger,
-} from "~/components/ui/sheet";
-import { MenuIcon, Search, ArrowUpRight } from "lucide-react";
-import { ROUTES } from "~/utils/constants/routes";
-import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
-import SearchSection from "./searchSection";
+} from "../common/sheet";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-30 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 ${
+      className={`fixed top-0 z-50 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 ${
         isScrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
@@ -84,7 +84,7 @@ export default function Header() {
               </div>
             </DialogTrigger>
             <DialogContent
-              className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
+              className="flex w-full flex-col items-center justify-center rounded-none border-none bg-primary px-2 text-black md:min-w-max md:px-24 md:py-10"
               closeIconClassName="text-white size-6"
             >
               <SearchSection />
@@ -101,7 +101,7 @@ export default function Header() {
               />
             </SheetTrigger>
 
-            <SheetContent className="glassmorphism rounded-none border border-black border-opacity-10 bg-black bg-opacity-30">
+            <SheetContent className="glassmorphism rounded-none border border-transparent border-opacity-10 bg-black bg-opacity-60">
               <SheetHeader className="flex h-full w-full flex-col items-start justify-between gap-4">
                 <div className="mt-24 flex w-full flex-col items-start justify-center gap-4">
                   <Link

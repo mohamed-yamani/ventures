@@ -1,10 +1,9 @@
 import Link from "next/link";
 import ActionButton from "../common/button";
 import Image from "next/image";
-import { Input } from "../common/input";
 import SocialIcons from "../common/SocialIcons";
 import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
-import ContactUsSection from "./ContactUsSection";
+import SubscribeToVentures from "./SubscribeToVentures";
 
 const FooterSection = () => {
   return (
@@ -62,7 +61,7 @@ const FooterSection = () => {
                   className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
                   closeIconClassName="text-white size-6"
                 >
-                  <ContactUsSection />
+                  <SubscribeToVentures />
                 </DialogContent>
               </Dialog>
             </div>

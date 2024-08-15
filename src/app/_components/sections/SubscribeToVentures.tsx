@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Input } from "../common/input";
 
-const ContactUsSection = () => {
+const SubscribeToVentures = () => {
   return (
     <div className="relative">
-      <div className="container grid grid-cols-1 items-center justify-center gap-4 py-9 sm:grid-cols-2">
-        <div className="relative ml-9 h-80 w-80 md:bg-primary">
+      <div className="container mt-8 grid grid-cols-1 items-center justify-center gap-4 py-9 sm:grid-cols-2">
+        <div className="relative ml-9 h-80 md:w-80 md:bg-primary">
           <Image
             src="/assets/contact_us.jpg"
             alt="um6p"
@@ -22,7 +22,7 @@ const ContactUsSection = () => {
               SUBSCRIBE TO UM6P VENTURES NEWSLETTER
             </span>
           </p>
-          <div className="mb-8 mt-6 grid grid-cols-2 gap-x-8 gap-y-2">
+          <div className="grid-colos-1 mb-8 mt-6 grid gap-x-8 gap-y-2 md:grid-cols-2">
             <Input
               type="text"
               placeholder="FIRST NAME"
@@ -58,4 +58,4 @@ const ContactUsSection = () => {
   );
 };
 
-export default ContactUsSection;
+export default SubscribeToVentures;

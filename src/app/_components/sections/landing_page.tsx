@@ -12,6 +12,9 @@ import Button from "../common/button";
 import SocialIcons from "../common/SocialIcons";
 import Image from "next/image";
 import { Card, CardContent } from "~/components/ui/card";
+import { Send } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
+import ContactUsSection from "./ContactUs";
 
 export default function LandingPage() {
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -73,11 +76,11 @@ export default function LandingPage() {
           <CarouselContent className="flex w-full">
             {renderCarouselItems()}
           </CarouselContent>
-          <CarouselPrevious className="containers absolute left-6 top-1/2 z-50 -translate-y-1/2 md:left-48" />
-          <CarouselNext className="absolute right-6 top-1/2 z-50 -translate-y-1/2 transform md:right-48" />
+          <CarouselPrevious className="containers absolute left-6 top-1/2 z-10 -translate-y-1/2 md:left-48" />
+          <CarouselNext className="absolute right-6 top-1/2 z-10 -translate-y-1/2 transform md:right-48" />
         </Carousel>
         <div className="container absolute flex h-full w-full flex-col items-stretch justify-end pb-10 text-center">
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col-reverse items-center justify-between gap-9 md:flex-row">
             <div className="flex flex-row gap-4">
               <SocialIcons
                 src="/assets/social_icons/instagram.png"
@@ -94,18 +97,23 @@ export default function LandingPage() {
                 alt="Facebook"
               />
             </div>
-            <Button className="rounded-full bg-white px-4 py-2 text-primary">
-              <div className="flex flex-row items-center gap-2">
-                <Image
-                  src="/assets/social_icons/send.png"
-                  alt="Send"
-                  width={20}
-                  height={20}
-                  className="transform cursor-pointer transition duration-300 hover:scale-110"
-                />
-                CONTACT US
-              </div>
-            </Button>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="group rounded-full bg-white px-4 py-2 text-primary hover:text-white">
+                  <div className="flex flex-row items-center gap-2">
+                    <Send className="size-5 group-hover:text-white" />
+                    <span className="group-hover:text-white">CONTACT US</span>
+                  </div>
+                </Button>
+              </DialogTrigger>
+              <DialogContent
+                className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
+                closeIconClassName="text-white size-6"
+              >
+                <ContactUsSection />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

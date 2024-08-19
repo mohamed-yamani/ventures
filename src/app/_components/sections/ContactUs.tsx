@@ -4,27 +4,24 @@ import { Textarea } from "../common/textarea";
 
 const ContactUsSection = () => {
   return (
-    <div className="container relative w-screen p-4 sm:px-4 md:px-2">
-      <div className="container mt-4 min-w-max items-center justify-center gap-4 py-6">
-        <form className="flex w-full flex-col gap-3">
-          <div className="flex flex-col gap-1">
-            <p className="text-base font-normal text-white">CONTACT US</p>
-          </div>
-          <div className="mb-6 mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-2 md:grid-cols-2">
+    <div className="container relative p-4 sm:w-screen">
+      <div className="mt-4 min-w-max items-center justify-center gap-4 py-6">
+        <form className="mb-0 flex w-full flex-col gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-x-14   sm:gap-y-2 md:grid-cols-2">
             <Input
               type="text"
               placeholder="FIRST NAME"
-              className="h-10 w-full border-b border-white bg-transparent py-1 text-sm placeholder-white"
+              className="mb-6 h-10 w-full border-b border-white bg-transparent text-sm placeholder-white"
             />
             <Input
               type="text"
               placeholder="LAST NAME"
-              className="h-10 w-full border-b border-white bg-transparent py-1 text-sm placeholder-white"
+              className="mb-6 h-10 w-full border-b border-white bg-transparent py-1 text-sm placeholder-white"
             />
             <Input
               type="text"
               placeholder="SUBJECT"
-              className="h-10 w-full border-b border-white bg-transparent py-1 text-sm placeholder-white sm:col-span-2"
+              className="mb-6 h-10 w-full border-b border-white bg-transparent py-1 text-sm placeholder-white sm:col-span-2"
             />
             <div className="flex flex-col gap-1 sm:col-span-2">
               <Textarea

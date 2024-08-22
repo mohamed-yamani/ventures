@@ -4,7 +4,7 @@ import { Input } from "../common/input";
 const SubscribeToVentures = () => {
   return (
     <div className="relative">
-      <div className="container mt-8 grid grid-cols-1 items-center justify-center gap-4 py-9 sm:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 items-center justify-center gap-4 py-9 sm:grid-cols-2">
         <div className="relative ml-9 h-80 md:w-80 md:bg-primary">
           <Image
             src="/assets/contact_us.jpg"

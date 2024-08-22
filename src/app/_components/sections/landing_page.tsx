@@ -45,15 +45,25 @@ export default function LandingPage() {
     loop: true,
   };
 
+  const images = [
+    "/assets/landing/01.jpg",
+    "/assets/landing/02.jpg",
+    "/assets/landing/03.jpg",
+    "/assets/landing/04.jpg",
+    "/assets/landing/05.jpg",
+    "/assets/landing/06.jpg",
+    "/assets/landing/07.jpg",
+  ];
+
   const renderCarouselItems = () => {
-    return Array.from({ length: 10 }).map((_, index) => (
+    return Array.from({ length: images.length }).map((_, index) => (
       <CarouselItem key={index}>
         <Card>
-          <CardContent className="flex h-screen w-screen items-center justify-center p-0">
+          <CardContent className="flex h-screen w-screen items-center justify-center bg-primary p-0">
             <div className="relative h-full w-full">
               <Image
-                src={`/assets/landing/${index + 1}.jpg`}
-                alt={`Company ${index + 1}`}
+                src={images[index] ?? ""}
+                alt={`Image ${index}`}
                 layout="fill"
                 objectFit="cover"
               />

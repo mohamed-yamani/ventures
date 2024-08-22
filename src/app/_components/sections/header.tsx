@@ -39,7 +39,7 @@ export default function Header() {
         <Link href={ROUTES.HOME}>
           <Image
             src="/assets/ventures.png"
-            alt="Create T3 App Logo"
+            alt="ventures logo"
             width={200}
             height={120}
             className="-translate-x-4 transition-transform duration-300 hover:scale-110"
@@ -52,27 +52,21 @@ export default function Header() {
         >
           <Link
             href={ROUTES.ABOUT}
-            className="transition-transform duration-300 hover:scale-110 hover:text-orange-500 hover:underline"
+            className="transition-transform duration-300 hover:scale-110 hover:text-secondary"
           >
-            <span className="transition-all duration-300 hover:text-orange-500 hover:underline">
-              ABOUT US
-            </span>
+            ABOUT US
           </Link>
           <Link
             href={ROUTES.TEAM}
-            className="transition-transform duration-300 hover:scale-110 hover:text-orange-500 hover:underline"
+            className="transition-transform duration-300 hover:scale-110 hover:text-secondary"
           >
-            <span className="transition-all duration-300 hover:text-orange-500 hover:underline">
-              TEAM
-            </span>
+            TEAM
           </Link>
           <Link
             href={ROUTES.PORTFOLIO}
-            className="transition-transform duration-300 hover:scale-110 hover:text-orange-500 hover:underline"
+            className="transition-transform duration-300 hover:scale-110 hover:text-secondary"
           >
-            <span className="transition-all duration-300 hover:text-orange-500 hover:underline">
-              PORTFOLIO
-            </span>
+            PORTFOLIO
           </Link>
         </div>
 
@@ -106,93 +100,113 @@ export default function Header() {
                 <div className="mt-24 flex w-full flex-col items-start justify-center gap-4">
                   <Link
                     href={ROUTES.ABOUT}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110 md:hidden"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-105 md:hidden"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
+                    <span className="text-white transition-all hover:text-secondary">
                       ABOUT US
                     </span>
                     <div className="h-4 w-4">
-                      <ArrowUpRight size={24} className="text-white" />
+                      <ArrowUpRight
+                        size={24}
+                        className="text-white transition-colors duration-300 hover:text-secondary"
+                      />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.TEAM}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110 md:hidden"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-105 md:hidden"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
+                    <span className="text-white transition-all hover:text-secondary">
                       TEAM
                     </span>
                     <div className="h-4 w-4">
                       <ArrowUpRight size={24} className="text-white" />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110 md:hidden"
+                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-105 md:hidden"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
+                    <span className="text-white transition-all hover:text-secondary">
                       PORTFOLIO
                     </span>
                     <div className="h-4 w-4">
                       <ArrowUpRight size={24} className="text-white" />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white md:hidden" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
+                    className="flex w-full flex-row items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:text-secondary"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
+                    <span className="transition-colors duration-300">
                       NETWORK
                     </span>
                     <div className="h-4 w-4">
-                      <ArrowUpRight size={24} className="text-white" />
+                      <ArrowUpRight
+                        size={24}
+                        className="transition-colors duration-300"
+                      />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
+                    className="flex w-full flex-row items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:text-secondary"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
+                    <span className="transition-colors duration-300">
                       RESOURCES
                     </span>
                     <div className="h-4 w-4">
-                      <ArrowUpRight size={24} className="text-white" />
+                      <ArrowUpRight
+                        size={24}
+                        className="transition-colors duration-300"
+                      />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
+                    className="flex w-full flex-row items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:text-secondary"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
-                      NEWS
-                    </span>
+                    <span className="transition-colors duration-300">NEWS</span>
                     <div className="h-4 w-4">
-                      <ArrowUpRight size={24} className="text-white" />
+                      <ArrowUpRight
+                        size={24}
+                        className="transition-colors duration-300"
+                      />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
                   <Link
                     href={ROUTES.PORTFOLIO}
-                    className="flex w-full flex-row items-center justify-between transition-transform duration-300 hover:scale-110"
+                    className="flex w-full flex-row items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:text-secondary"
                   >
-                    <span className="text-white transition-all hover:text-orange-500">
+                    <span className="transition-colors duration-300">
                       EVENTS
                     </span>
                     <div className="h-4 w-4">
-                      <ArrowUpRight size={24} className="text-white" />
+                      <ArrowUpRight
+                        size={24}
+                        className="transition-colors duration-300"
+                      />
                     </div>
                   </Link>
+
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
                 </div>
 
                 <div className="flex w-full -translate-y-10 flex-row items-center justify-between gap-4 text-white">
                   <Link href={ROUTES.CONTACT}>
-                    <span className="underline transition-transform duration-300 hover:scale-110 hover:text-orange-500">
+                    <span className="underline transition-transform duration-300 hover:scale-105 hover:text-secondary">
                       CONTACT US
                     </span>
                   </Link>
@@ -201,7 +215,7 @@ export default function Header() {
                     alt="Create T3 App Logo"
                     width={120}
                     height={60}
-                    className="transition-transform duration-300 hover:scale-110"
+                    className="transition-transform duration-300 hover:scale-105"
                   />
                 </div>
               </SheetHeader>

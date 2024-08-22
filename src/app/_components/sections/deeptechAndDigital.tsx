@@ -14,16 +14,16 @@ const DeeptechAndDigital = () => {
   return (
     <div
       ref={containerRef}
-      className={`flex w-full flex-col items-center justify-between bg-white pt-24 transition-opacity duration-1000 ${
+      className={`flex w-full flex-col items-center justify-between bg-white pt-16 transition-opacity duration-1000 md:pt-24 ${
         isIntersecting ? "opacity-100" : "opacity-0"
       }`}
     >
       <Title>LOREM IPSUM</Title>
       <Subtitle>Our Focus Areas</Subtitle>
-      <div className="w-full bg-gradient-to-b from-white to-[#cbdeed] pb-56 pt-36">
-        <div className="container grid w-full grid-cols-1 items-center justify-center gap-4 text-center md:grid-cols-2">
+      <div className="w-full bg-gradient-to-b from-white to-[#cbdeed] pb-10 pt-16 md:pb-56 md:pt-36">
+        <div className="grid w-full grid-cols-1 items-center justify-center gap-5 text-center md:grid-cols-2 md:gap-32">
           <div
-            className={`order-2 flex flex-col items-start justify-start gap-5 text-start transition-transform duration-1000 md:order-1 ${
+            className={`order-2 flex flex-col items-start justify-start gap-5 p-8 text-start transition-transform duration-1000 md:order-1 md:pl-52 ${
               isIntersecting ? "translate-x-0" : "-translate-x-full"
             }`}
           >
@@ -43,16 +43,16 @@ const DeeptechAndDigital = () => {
             </Button>
           </div>
           <div
-            className={`order-1 flex flex-col items-end justify-center gap-5 text-center transition-transform duration-1000 md:order-2 ${
+            className={`order-1 flex h-full w-full flex-col items-end justify-center gap-5 text-center transition-transform duration-1000 md:order-2 ${
               isIntersecting ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="relative aspect-square w-full md:w-8/12">
+            <div className="relative h-0 w-full pb-[56.25%]">
               <Image
                 src="/assets/deeptech.jpg"
                 alt="ventures"
                 fill={true}
-                className="object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
@@ -61,17 +61,17 @@ const DeeptechAndDigital = () => {
               isIntersecting ? "translate-x-0" : "-translate-x-full"
             }`}
           >
-            <div className="relative aspect-square w-full md:w-8/12">
+            <div className="relative aspect-video w-full">
               <Image
                 src="/assets/digital-transformation.png"
                 alt="ventures"
                 fill={true}
-                className="object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
           <div
-            className={`order-4 flex flex-col items-start justify-start gap-4 text-start transition-transform duration-1000 md:order-4 ${
+            className={`order-4 flex flex-col items-start justify-start gap-4 p-8 text-start transition-transform duration-1000 md:order-4 md:mr-52 ${
               isIntersecting ? "translate-x-0" : "translate-x-full"
             }`}
           >

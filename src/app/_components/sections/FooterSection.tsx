@@ -33,14 +33,23 @@ const FooterSection = () => {
               <Link
                 href="https://create.t3.gg/en/usage/first-steps"
                 target="_blank"
+                className="transition-transform duration-300 hover:scale-110 hover:text-secondary"
               >
                 <span>ABOUT US</span>
               </Link>
 
-              <Link href="" target="_blank">
+              <Link
+                href=""
+                target="_blank"
+                className="transition-transform duration-300 hover:scale-110 hover:text-secondary"
+              >
                 <span>NEWS</span>
               </Link>
-              <Link href="" target="_blank">
+              <Link
+                href=""
+                target="_blank"
+                className="transition-transform duration-300 hover:scale-110 hover:text-secondary"
+              >
                 <span>CONTACT US</span>
               </Link>
             </div>
@@ -58,7 +67,7 @@ const FooterSection = () => {
                   </ActionButton>
                 </DialogTrigger>
                 <DialogContent
-                  className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
+                  className="flex w-full flex-col items-center justify-center rounded-none border-none bg-primary px-2 text-black md:min-w-max md:px-24 md:py-10"
                   closeIconClassName="text-white size-6"
                 >
                   <SubscribeToVentures />

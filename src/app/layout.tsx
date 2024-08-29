@@ -5,6 +5,7 @@ import { Montserrat } from "next/font/google";
 import Header from "./_components/sections/header";
 
 import { type Metadata } from "next";
+import FooterSection from "./_components/sections/FooterSection";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
         {children}
         {/* <footer className="bg-primary text-white"> */}
+        <FooterSection />
       </body>
     </html>
   );

@@ -48,7 +48,7 @@ const SubscribeToVentures = () => {
               placeholder="EMAIL ADDRESS"
               className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
             />
-            <button className="w-full translate-y-2 rounded-none bg-secondary p-2 font-normal text-white">
+            <button className="h-10 w-full translate-y-3 rounded-none bg-secondary p-2 font-normal text-white">
               STAY UPDATED
             </button>
           </div>

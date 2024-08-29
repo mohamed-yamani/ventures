@@ -12,8 +12,6 @@ import Subtitle from "../common/subtitle";
 import Title from "../common/title";
 import Image from "next/image";
 import useIntersectionObserver from "~/hooks/useIntersectionObserver";
-import { Link } from "lucide-react";
-import { ROUTES } from "~/utils/constants/routes";
 import { useRouter } from "next/navigation";
 
 const Companies = () => {

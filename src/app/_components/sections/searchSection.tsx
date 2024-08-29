@@ -15,17 +15,27 @@ const SearchSection = () => {
             className="w-full border-b border-white bg-transparent placeholder-primary"
           />
         </div>
-        <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white sm:col-span-1">
+        <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white hover:bg-white hover:text-primary sm:col-span-1">
           SEARCH
         </Button>
       </div>
       <div className="font-normal text-white">SUGGESTIONS</div>
       <div className="flex flex-wrap items-center justify-start gap-4 py-9">
-        <Badge className="bg-white font-normal text-primary">Startups</Badge>
-        <Badge className="bg-white font-normal text-primary">Deep Tech</Badge>
-        <Badge className="bg-white font-normal text-primary">Focus Areas</Badge>
-        <Badge className="bg-white font-normal text-primary">Team</Badge>
-        <Badge className="bg-white font-normal text-primary">Portfolio</Badge>
+        <Badge className="cursor-pointer bg-white px-4 py-2 font-semibold text-primary hover:bg-secondary hover:text-white">
+          Startups
+        </Badge>
+        <Badge className="cursor-pointer bg-white px-4 py-2 font-semibold text-primary hover:bg-secondary hover:text-white">
+          Deep Tech
+        </Badge>
+        <Badge className="cursor-pointer bg-white px-3 py-2 font-semibold text-primary hover:bg-secondary hover:text-white">
+          Focus Areas
+        </Badge>
+        <Badge className="cursor-pointer bg-white px-3 py-2 font-semibold text-primary hover:bg-secondary hover:text-white">
+          Team
+        </Badge>
+        <Badge className="cursor-pointer bg-white px-3 py-2 font-semibold text-primary hover:bg-secondary hover:text-white">
+          Portfolio
+        </Badge>
       </div>
     </div>
   );

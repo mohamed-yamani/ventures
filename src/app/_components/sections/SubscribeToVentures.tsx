@@ -26,27 +26,27 @@ const SubscribeToVentures = () => {
             <Input
               type="text"
               placeholder="FIRST NAME"
-              className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
+              className="h-12 w-full border-b border-white bg-transparent py-2 text-white placeholder-white placeholder:opacity-70"
             />
             <Input
               type="text"
               placeholder="LAST NAME"
-              className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
+              className="h-12 w-full border-b border-white bg-transparent py-2 text-white placeholder-white placeholder:opacity-70"
             />
             <Input
               type="title"
               placeholder="TITLE"
-              className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
+              className="h-12 w-full border-b border-white bg-transparent py-2 text-white placeholder-white placeholder:opacity-70"
             />
             <Input
               type="company"
               placeholder="COMPANY"
-              className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
+              className="h-12 w-full border-b border-white bg-transparent py-2 text-white placeholder-white placeholder:opacity-70"
             />
             <Input
               type="email"
               placeholder="EMAIL ADDRESS"
-              className="h-12 w-full border-b border-white bg-transparent py-2 placeholder-white"
+              className="h-12 w-full border-b border-white bg-transparent py-2 text-white placeholder-white placeholder:opacity-70"
             />
             <button className="h-10 w-full translate-y-3 rounded-none bg-secondary p-2 font-normal text-white">
               STAY UPDATED

@@ -66,8 +66,8 @@ export default function Portfolio() {
               <Search className="text-primary" />
               <Input
                 type="text"
-                placeholder="DISCOVER OUR VENTURES ...."
-                className="w-full border-b border-white bg-transparent placeholder-primary"
+                placeholder="Discover our ventures ..."
+                className="w-full border-b border-white bg-transparent text-primary placeholder-primary"
               />
             </div>
             <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white sm:col-span-1">

@@ -1,9 +1,14 @@
 type SubtitleProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
-const Subtitle = ({ children }: SubtitleProps) => {
-  return <h2 className="text-3xl font-semibold text-primary">{children}</h2>;
+const Subtitle = ({ children, className }: SubtitleProps) => {
+  return (
+    <h2 className={`text-3xl font-semibold text-primary ${className}`}>
+      {children}
+    </h2>
+  );
 };
 
 export default Subtitle;

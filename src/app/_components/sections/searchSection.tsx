@@ -12,7 +12,7 @@ const SearchSection = () => {
           <Input
             type="text"
             placeholder="WHAT ARE YOU LOOKING FOR?"
-            className="w-full border-b border-white bg-transparent placeholder-primary"
+            className="w-full border-b border-white bg-transparent placeholder-primary caret-primary"
           />
         </div>
         <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white hover:bg-white hover:text-primary sm:col-span-1">

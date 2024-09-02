@@ -7,7 +7,7 @@ const ContactUsSection = () => {
     <div className="container relative p-4 sm:w-screen">
       <div className="mt-4 min-w-max items-center justify-center gap-4 py-6">
         <form className="mb-0 flex w-full flex-col gap-3">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-x-14   sm:gap-y-2 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-x-14 sm:gap-y-2 md:grid-cols-2">
             <Input
               type="text"
               placeholder="FIRST NAME"
@@ -30,7 +30,7 @@ const ContactUsSection = () => {
               />
             </div>
 
-            <Button className="mt-3 w-full translate-y-1 rounded-none border-none bg-secondary p-1.5 text-sm font-normal text-white sm:col-span-2 md:col-span-2">
+            <Button className="mt-3 w-full translate-y-1 rounded-none border-none bg-secondary p-1.5 text-sm font-normal text-white transition duration-300 ease-in-out hover:bg-white hover:text-primary sm:col-span-2 md:col-span-2">
               SEND MESSAGE
             </Button>
           </div>

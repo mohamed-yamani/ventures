@@ -67,10 +67,10 @@ export default function Portfolio() {
               <Input
                 type="text"
                 placeholder="Discover our ventures ..."
-                className="w-full border-b border-white bg-transparent text-primary placeholder-primary"
+                className="w-full border-b border-white bg-transparent text-primary placeholder-primary caret-primary"
               />
             </div>
-            <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white sm:col-span-1">
+            <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white transition duration-300 ease-in-out hover:bg-white hover:text-primary sm:col-span-1">
               SEARCH
             </Button>
           </div>

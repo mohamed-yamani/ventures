@@ -1,7 +1,9 @@
+import { LucideIcon, Mail, Phone, MapPin } from "lucide-react";
 import Subtitle from "../common/subtitle";
 import TeamMember from "../common/TeamMember";
 import Title from "../common/title";
 import Image from "next/image";
+import GetInTouch from "./GetInTouch";
 
 const OurTeam = () => {
   return (
@@ -69,7 +71,7 @@ const OurTeam = () => {
         </div>
       </div>
 
-      <div className="mb-96 mt-24 h-[25rem] w-full bg-primary bg-gradient-to-r from-white to-[#bbd0e1]">
+      <div className="mb-24 mt-24 h-[25rem] w-full bg-primary bg-gradient-to-r from-white to-[#bbd0e1]">
         <div className="container flex w-full flex-col items-start justify-center gap-4">
           <div className="grid w-full grid-cols-1 grid-rows-1 items-center justify-center md:grid-cols-2">
             <div className="flex flex-col items-start justify-center gap-4 p-4">
@@ -107,8 +109,30 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
+
+      <GetInTouch />
     </main>
   );
 };
+
+// function for this info like mail and phone number and address
+interface ContactInfoProps {
+  icon: LucideIcon;
+  title: string;
+  info: string;
+}
+
+function ContactInfo({ icon: Icon, title, info }: ContactInfoProps) {
+  return (
+    <div className="">
+      <div className="flex items-center justify-start gap-4">
+        <Icon className="text-white" size={24} /> {/* Render the icon */}
+        <p className="text-lg font-normal text-white">{title}</p>
+      </div>
+      <div className="my-5 w-2/3 border border-b-0 border-white" />
+      <p className="text-lg font-normal text-white">{info}</p>
+    </div>
+  );
+}
 
 export default OurTeam;

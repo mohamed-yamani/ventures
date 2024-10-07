@@ -8,13 +8,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel";
-import Button from "../common/button";
-import SocialIcons from "../common/SocialIcons";
 import Image from "next/image";
 import { Card, CardContent } from "~/components/ui/card";
-import { Send } from "lucide-react";
-import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
-import ContactUsSection from "./ContactUs";
+import ProgressInsights from "./ProgressInsights";
+import FindOutMoreButton from "../common/DiscoverArrowButton";
 
 export default function LandingPage() {
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -59,8 +56,8 @@ export default function LandingPage() {
     return Array.from({ length: images.length }).map((_, index) => (
       <CarouselItem key={index}>
         <Card>
-          <CardContent className="flex h-screen w-screen items-center justify-center bg-primary p-0">
-            <div className="relative h-full w-full">
+          <CardContent className="flex h-screen w-screen items-start justify-center bg-[#114577] p-0">
+            <div className="relative h-3/4 w-full">
               <Image
                 src={images[index] ?? ""}
                 alt={`Image ${index}`}
@@ -86,11 +83,13 @@ export default function LandingPage() {
           <CarouselContent className="flex w-full">
             {renderCarouselItems()}
           </CarouselContent>
-          <CarouselPrevious className="containers absolute left-6 top-1/2 z-10 -translate-y-1/2 md:left-48" />
-          <CarouselNext className="absolute right-6 top-1/2 z-10 -translate-y-1/2 transform md:right-48" />
+          <CarouselPrevious className="containers absolute left-6 top-32 z-10 -translate-y-1/2 md:left-48 md:top-1/3" />
+          <CarouselNext className="absolute right-6 top-32 z-10 -translate-y-1/2 transform md:right-48 md:top-1/3" />
         </Carousel>
-        <div className="container absolute flex h-full w-full flex-col items-stretch justify-end pb-10 text-center">
-          <div className="flex flex-col-reverse items-center justify-between gap-9 md:flex-row">
+        <div className="absolute flex h-full w-full flex-col items-stretch justify-end text-center">
+          <ProgressInsights />
+          <FindOutMoreButton />
+          {/* <div className="flex flex-col-reverse items-center justify-between gap-9 md:flex-row">
             <div className="flex flex-row gap-4">
               <SocialIcons
                 src="/assets/social_icons/instagram.png"
@@ -124,7 +123,7 @@ export default function LandingPage() {
                 <ContactUsSection />
               </DialogContent>
             </Dialog>
-          </div>
+          </div> */}
         </div>
       </div>
     </main>

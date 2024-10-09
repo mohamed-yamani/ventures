@@ -79,7 +79,7 @@ const DeepTransform = () => {
 
       {/* Previous Button */}
       <button
-        className={`absolute bottom-4 right-96 z-10 flex h-10 w-10 transform items-center justify-center rounded transition-all duration-300 ease-in-out ${
+        className={`absolute bottom-4 right-96 z-10 flex h-10 w-16 transform items-center justify-center rounded transition-all duration-300 ease-in-out ${
           canScrollPrev
             ? "hover:bg-primary-dark bg-primary text-white hover:scale-105"
             : "bg-gray-300 text-gray-500"
@@ -92,7 +92,7 @@ const DeepTransform = () => {
 
       {/* Next Button */}
       <button
-        className={`absolute bottom-4 right-80 z-10 flex h-10 w-10 transform items-center justify-center rounded transition-all duration-300 ease-in-out ${
+        className={`absolute bottom-4 right-72 z-10 flex h-10 w-16 transform items-center justify-center rounded transition-all duration-300 ease-in-out ${
           canScrollNext
             ? "hover:bg-primary-dark bg-primary text-white hover:scale-105"
             : "bg-gray-300 text-gray-500"

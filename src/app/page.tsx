@@ -3,7 +3,6 @@ import LandingPage from "./_components/sections/landing_page";
 import Companies from "./_components/sections/companies";
 import DeeptechAndDigital from "./_components/sections/deeptechAndDigital";
 import DeepTransform from "~/components/ui/DeepTransform";
-import Convoyeurs from "~/components/ui/Convoyeurs";
 
 export default function HomePage() {
   return (
@@ -12,7 +11,6 @@ export default function HomePage() {
       <Companies />
       <DeepTransform />
       <DeeptechAndDigital />
-      <Convoyeurs />
     </main>
   );
 }

@@ -11,19 +11,38 @@ import TensionSystemTable from "./TensionSystemTable";
 
 const Convoyeurs = () => {
   return (
-    <div>
-      <CalculationCharacteristicsTable />
-      <CommandGroupTable />
-      <BandeTable />
-      <StationsTable />
-      <TamboursTable />
-      <PaliersTable />
-      <TensionSystemTable />
-      <AccessoiresTable />
-      <GoulotteTable />
-      <AutresTable />
-    </div>
+    <>
+      <CalculationCharacteristicsTable />;
+    </>
   );
+
+  {
+    /* <CommandGroupTable /> */
+  }
+  {
+    /* <BandeTable /> */
+  }
+  {
+    /* <StationsTable /> */
+  }
+  {
+    /* <TamboursTable /> */
+  }
+  {
+    /* <PaliersTable /> */
+  }
+  {
+    /* <TensionSystemTable /> */
+  }
+  {
+    /* <AccessoiresTable /> */
+  }
+  {
+    /* <GoulotteTable /> */
+  }
+  {
+    /* <AutresTable /> */
+  }
 };
 
 export default Convoyeurs;

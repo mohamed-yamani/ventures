@@ -26,6 +26,32 @@ const tensionSystemData: TensionSystemDetails = {
   "Course Chariot": "",
 };
 
+// Accessoires Table
+
+// Define TypeScript types for the data
+type AccessoiresDetails = {
+  "Racleur en tête": string;
+  "Chasse pierres": string;
+  "Arrêt d'urgence": {
+    Type: string;
+    "En tête et en queue": string;
+  };
+  "Déport bande": string;
+  "Contrôleur de rotation": string;
+};
+
+// Table data in TypeScript format
+const accessoiresData: AccessoiresDetails = {
+  "Racleur en tête": "Lames tangentielle",
+  "Chasse pierres": "en V",
+  "Arrêt d'urgence": {
+    Type: "à cable - 1 paires",
+    "En tête et en queue": "Oui",
+  },
+  "Déport bande": "Min 2 paires",
+  "Contrôleur de rotation": "1",
+};
+
 // React component to render the Tension System table
 const TensionSystemTable: React.FC = () => {
   return (

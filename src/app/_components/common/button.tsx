@@ -10,7 +10,7 @@ const ActionButton = ({ onClick, children, className }: ActionButtonProps) => {
   return (
     <Button
       onClick={onClick}
-      className={`bg-secondary font-montserrat text-white ${className}`}
+      className={`bg-secondary text-white ${className}`}
     >
       {children}
     </Button>

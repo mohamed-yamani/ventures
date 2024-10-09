@@ -25,18 +25,14 @@ const TestimonialsSection = () => {
       <div className="absolute bottom-0 z-0 h-80 w-[100vw] flex-row items-start justify-start bg-gradient-to-r from-[#ffffff] to-[#cbdeed]">
         <div className="container flex h-full flex-col gap-4 py-12 text-start">
           <div className="flex w-3/6 flex-col gap-4 text-start">
-            <p className="font-montserrat text-3xl text-primary">
-              Our testimolials
-            </p>
-            <p className="text-1xl font-montserrat text-black">
+            <p className="text-3xl text-primary">Our testimolials</p>
+            <p className="text-1xl text-black">
               Le lorem ipsum est, en imprimerie, une suite de mots sans
               signification utilisée à titre provisoire pour calibrer une mise
               en page, le texte définitif
             </p>
-            <p className="text-l text-justify font-montserrat text-black">
-              LAAMIAA EL AMRANI
-            </p>
-            <p className="text-l text-justify font-montserrat font-light text-secondary">
+            <p className="text-l text-justify text-black">LAAMIAA EL AMRANI</p>
+            <p className="text-l text-justify font-light text-secondary">
               INVESTMENT DIRECTOR
             </p>
           </div>

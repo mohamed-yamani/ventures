@@ -1,10 +1,11 @@
 type SubtitleProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
-const Subtitle = ({ children }: SubtitleProps) => {
+const Subtitle = ({ children, className }: SubtitleProps) => {
   return (
-    <h2 className="font-montserrat text-3xl font-normal text-primary">
+    <h2 className={`text-3xl font-semibold text-primary ${className}`}>
       {children}
     </h2>
   );

@@ -8,8 +8,9 @@ type TeamMemberProps = {
 
 const TeamMember = ({ name, role, imageSrc }: TeamMemberProps) => {
   return (
-    <div className="p-4">
-      <div className="relative aspect-square w-full overflow-hidden bg-primary">
+    <div className="group mb-16 p-4">
+      {/* team members */}
+      <div className="relative aspect-square w-full cursor-pointer overflow-hidden bg-[#1c6fad] transition-all duration-300 group-hover:bg-[#e9a25d]">
         <Image
           src={imageSrc}
           alt={`${name} photo`}
@@ -17,10 +18,11 @@ const TeamMember = ({ name, role, imageSrc }: TeamMemberProps) => {
           objectFit="cover"
         />
       </div>
-      <h3 className="mt-4 text-lg font-semibold text-primary">
+      {/* Change the color on hover using the group-hover utility class */}
+      <h3 className="mt-4 cursor-pointer text-lg font-semibold text-primary transition-colors duration-300 group-hover:text-secondary">
         {name.toUpperCase()}
       </h3>
-      <p className="text-sm font-normal text-secondary">{role.toUpperCase()}</p>
+      <p className="text-sm font-normal text-gray-800">{role}</p>
     </div>
   );
 };

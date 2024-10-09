@@ -1,47 +1,130 @@
-import Link from "next/link";
-import { Button } from "~/components/ui/button";
+"use client";
+
+import { useEffect, useRef } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "~/components/ui/carousel";
 import Image from "next/image";
+import { Card, CardContent } from "~/components/ui/card";
+import ProgressInsights from "./ProgressInsights";
+import FindOutMoreButton from "../common/DiscoverArrowButton";
 
 export default function LandingPage() {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight
+      ) {
+        if (carouselRef.current) {
+          const nextScrollPosition =
+            carouselRef.current.scrollLeft + window.innerWidth;
+          carouselRef.current.scrollTo({
+            left: nextScrollPosition,
+            behavior: "smooth",
+          });
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const carouselOptions = {
+    align: "center" as const,
+    loop: true,
+  };
+
+  const images = [
+    "/assets/landing/01.jpg",
+    "/assets/landing/02.jpg",
+    "/assets/landing/03.jpg",
+    "/assets/landing/04.jpg",
+    "/assets/landing/05.jpg",
+    "/assets/landing/06.jpg",
+    "/assets/landing/07.jpg",
+  ];
+
+  const renderCarouselItems = () => {
+    return Array.from({ length: images.length }).map((_, index) => (
+      <CarouselItem key={index}>
+        <Card>
+          <CardContent className="flex h-screen w-screen items-start justify-center bg-[#114577] p-0">
+            <div className="relative h-3/4 w-full">
+              <Image
+                src={images[index] ?? ""}
+                alt={`Image ${index}`}
+                layout="fill"
+                objectFit="cover"
+              />
+              <div className="absolute flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-50 text-white" />
+            </div>
+          </CardContent>
+        </Card>
+      </CarouselItem>
+    ));
+  };
+
   return (
-    <main className="flex h-screen w-full flex-row bg-gradient-to-r from-[#ffffff] to-[#cbdeed]">
-      <div className="bg-green container flex h-[100vh] w-1/2 flex-col items-start justify-center gap-4 py-12 text-center">
-        <p className="text-1xl font-montserrat text-secondary">
-          THE FUTURE OF AFRICA AND BEYOND
-        </p>
-        <p className="font-montserrat text-3xl text-black">
-          Investing in science and innovation
-        </p>
-        <p className="text-l font-montserrat text-justify text-black">
-          Le lorem ipsum est, en imprimerie, une suite de mots sans
-          signification utilisée à titre provisoire pour calibrer une mise en
-          page, le texte définitif 
-        </p>
-        <div className="h-12 w-1/2"></div>
-        <div className="flex gap-4">
-          <Link href="https://create.t3.gg/en/introduction" target="_blank">
-            <Button className="background text-l text-white">
-              {/* Check our focus areas */}
-              CHECK OUR FOCUS AREAS
-            </Button>
-          </Link>
-          <Image
-            src="/assets/linkedin.svg"
-            alt="Hero Image"
-            width={30}
-            height={30}
-          />
-          <Image src="/assets/x.svg" alt="Hero Image" width={30} height={30} />
-          <Image
-            src="/assets/instagram.svg"
-            alt="Hero Image"
-            width={30}
-            height={30}
-          />
+    <main className="relative flex h-screen w-full flex-col items-center justify-center bg-gradient-to-r from-white to-[#cbdeed] md:flex-row">
+      <div className="flex h-screen flex-col items-center justify-center text-center">
+        <Carousel
+          ref={carouselRef}
+          opts={carouselOptions}
+          className="m-0 w-screen"
+        >
+          <CarouselContent className="flex w-full">
+            {renderCarouselItems()}
+          </CarouselContent>
+          <CarouselPrevious className="containers absolute left-6 top-32 z-10 -translate-y-1/2 md:left-48 md:top-1/3" />
+          <CarouselNext className="absolute right-6 top-32 z-10 -translate-y-1/2 transform md:right-48 md:top-1/3" />
+        </Carousel>
+        <div className="absolute flex h-full w-full flex-col items-stretch justify-end text-center">
+          <ProgressInsights />
+          <FindOutMoreButton />
+          {/* <div className="flex flex-col-reverse items-center justify-between gap-9 md:flex-row">
+            <div className="flex flex-row gap-4">
+              <SocialIcons
+                src="/assets/social_icons/instagram.png"
+                alt="Instagram"
+              />
+              <SocialIcons
+                src="/assets/social_icons/linkedin.png"
+                alt="LinkedIn"
+              />
+              <SocialIcons src="/assets/social_icons/play.png" alt="Play" />
+              <SocialIcons src="/assets/social_icons/x.png" alt="X" />
+              <SocialIcons
+                src="/assets/social_icons/facebook.png"
+                alt="Facebook"
+              />
+            </div>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="group rounded-full bg-white px-4 py-2 text-primary hover:text-white">
+                  <div className="flex flex-row items-center gap-2">
+                    <Send className="size-5 group-hover:text-white" />
+                    <span className="group-hover:text-white">CONTACT US</span>
+                  </div>
+                </Button>
+              </DialogTrigger>
+              <DialogContent
+                className="flex min-w-max flex-col items-center justify-center rounded-none border-none bg-primary text-black"
+                closeIconClassName="text-white size-6"
+              >
+                <ContactUsSection />
+              </DialogContent>
+            </Dialog>
+          </div> */}
         </div>
-      </div>
-      <div className="bg-red container flex h-[100vh] w-1/2 flex-col gap-4 py-12 text-center">
-        {/* hello world (Red half) */}
       </div>
     </main>
   );

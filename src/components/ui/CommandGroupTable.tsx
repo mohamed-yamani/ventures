@@ -74,19 +74,11 @@ const CommandGroupTable: React.FC = () => {
       {/* Main Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto border-collapse border border-gray-400">
-          <thead>
-            {/* New Header Row for 'Nombre de groupes de commande = 1' */}
-            <tr>
-              <th
-                className="border border-gray-400 bg-purple-200 px-4 py-2 text-center font-bold"
-                colSpan={6}
-              >
-                Nombre de groupes de commande = 1
-              </th>
-            </tr>
-          </thead>
+          <thead></thead>
 
           <tbody>
+            {/* New Row for 'Nombre de groupes de commande = 1' */}
+
             <tr>
               <td
                 className="border border-gray-400 bg-blue-200 px-4 py-2 text-center font-bold text-blue-900"
@@ -99,6 +91,17 @@ const CommandGroupTable: React.FC = () => {
               >
                 Command Group
               </td>
+
+              <th
+                className="border border-gray-400 bg-purple-200 px-4 py-2 text-center font-bold"
+                colSpan={6}
+                rowSpan={1}
+              >
+                Nombre de groupes de commande = 1
+              </th>
+            </tr>
+
+            <tr>
               <th
                 className="border border-gray-400 bg-purple-200 px-4 py-2 text-left font-bold"
                 colSpan={2}
@@ -111,10 +114,14 @@ const CommandGroupTable: React.FC = () => {
               >
                 Reducer
               </th>
-              <th className="border border-gray-400 bg-purple-200 px-4 py-2 text-left font-bold">
+              <th
+                className="border border-gray-400 bg-purple-200 px-4 py-2 text-left font-bold"
+                colSpan={2}
+              >
                 Intermediate Organs
               </th>
             </tr>
+
             {/* Motor Data */}
             <tr>
               <td className="border border-gray-400 px-4 py-2 font-bold">

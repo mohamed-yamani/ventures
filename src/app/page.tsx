@@ -1,7 +1,6 @@
 import React from "react";
 import LandingPage from "./_components/sections/landing_page";
 import Companies from "./_components/sections/companies";
-import DeeptechAndDigital from "./_components/sections/deeptechAndDigital";
 import DeepTransform from "~/components/ui/DeepTransform";
 
 export default function HomePage() {
@@ -10,7 +9,6 @@ export default function HomePage() {
       <LandingPage />
       <Companies />
       <DeepTransform />
-      <DeeptechAndDigital />
     </main>
   );
 }

@@ -59,10 +59,10 @@ export default function Portfolio() {
         </div>
         <div className="absolute flex h-full w-full flex-col items-center justify-center text-center font-medium text-black">
           <Title className="pt-32 text-6xl text-white">
-            Building the future of africa
+            Building the future of Africa
           </Title>
-          <div className="grid grid-cols-1 items-center justify-center gap-4 p-0 py-9 sm:grid-cols-8">
-            <div className="col-span-1 flex min-w-max flex-row items-center justify-center bg-white px-3 sm:col-span-7">
+          <div className="flex flex-col items-center justify-center gap-4 py-9 sm:flex-row sm:justify-between">
+            <div className="flex min-w-max flex-row items-center justify-center bg-white px-3 sm:flex-grow">
               <Search className="text-primary" />
               <Input
                 type="text"
@@ -70,7 +70,7 @@ export default function Portfolio() {
                 className="w-full border-b border-white bg-transparent text-primary placeholder-primary caret-primary"
               />
             </div>
-            <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white transition duration-300 ease-in-out hover:bg-white hover:text-primary sm:col-span-1">
+            <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white transition duration-300 ease-in-out hover:bg-white hover:text-primary sm:w-auto">
               SEARCH
             </Button>
           </div>
@@ -92,23 +92,32 @@ export default function Portfolio() {
           />
         </div>
 
-        <div className="gap-2sm:grid-cols-2 grid w-full grid-cols-1 gap-2 pt-32 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-          {images.map(({ src, link }, index) => (
-            <div
-              key={index}
-              className="group flex aspect-square cursor-pointer flex-wrap items-center justify-center gap-4 rounded-none bg-gray-100 transition-all duration-300 hover:bg-primary"
-            >
-              <div className="relative h-40 w-40">
-                <Image
-                  src={src}
-                  alt={`Company ${index + 1}`}
-                  layout="fill"
-                  objectFit="contain"
-                  className="transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                />
+        <div className="flex w-full flex-wrap gap-2 pt-32">
+          {images.map(({ src, link }, index) => {
+            const isLastRow = index >= images.length - (images.length % 4);
+
+            return (
+              <div
+                key={index}
+                className={`group relative z-10 flex aspect-video w-full origin-top transform cursor-pointer items-center justify-center gap-4 rounded-none border border-gray-300 py-6 transition-all duration-300 ease-in-out hover:z-[100] hover:border-none hover:bg-primary sm:w-[calc(50%-8px)] md:w-[calc(33%-8px)] lg:w-[calc(25%-8px)] ${
+                  isLastRow
+                    ? "hover:-translate-y-[104%] hover:scale-y-[204%]" // Scale upwards for the last row
+                    : "hover:scale-y-[204%]"
+                }`}
+              >
+                {/* Fix the image size to prevent scaling */}
+                <div className="relative h-32 w-32 transform transition-all duration-300 ease-in-out group-hover:scale-y-[50%]">
+                  <Image
+                    src={src}
+                    alt={`Company ${index + 1}`}
+                    layout="fill"
+                    objectFit="contain"
+                    className="object-contain group-hover:brightness-0 group-hover:invert" // Ensure the image itself stays contained within the container
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </main>

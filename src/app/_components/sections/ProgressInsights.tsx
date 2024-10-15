@@ -2,23 +2,23 @@
 
 import { Merriweather } from "next/font/google";
 
-const font = Merriweather({ weight: "400", subsets: ["latin"] });
+const merriweatherfont = Merriweather({ weight: "400", subsets: ["latin"] });
 
 const ProgressInsights = () => {
   return (
-    <div className="relative flex h-[60vh] w-full flex-col items-center justify-center bg-[#114577] text-white md:h-[40vh] lg:h-[30vh]">
-      <div className="flex w-full flex-col justify-between gap-8 px-5 text-center md:flex-row md:gap-6 md:px-10 lg:gap-8">
+    <div className="relative flex h-[60vh] w-full items-center justify-center bg-[#114577] text-white md:h-[40vh] lg:h-[30vh]">
+      <div className="flex w-full items-center justify-between gap-8 px-5 pb-10 text-center md:gap-6 md:px-10 lg:gap-8">
         {/* INVESTMENT TICKET */}
-        <div className="flex w-full flex-col items-center justify-center md:border-r">
+        <div className="flex w-full flex-col items-center justify-center">
           <ProgressInsightsCard
             title="INVESTMENT TICKET"
             value={
-              <div className="flex flex-col items-start">
-                <p className="text-center text-base font-normal text-orange-400 md:text-lg lg:text-xl">
+              <div className="flex h-36 flex-col items-start justify-end">
+                <p className="text-sm font-normal text-orange-400 md:text-base lg:text-lg">
                   UP TO
                 </p>
                 <p
-                  className={`text-center text-3xl font-normal text-white md:text-5xl lg:text-6xl ${font.className}`}
+                  className={`text-5xl font-semibold text-white md:text-5xl lg:text-6xl ${merriweatherfont.className}`}
                 >
                   700K <span className="text-lg md:text-xl">USD</span>
                 </p>
@@ -26,45 +26,57 @@ const ProgressInsights = () => {
             }
           />
         </div>
-
+        {/* vertical line */}
+        <div className="mt-10 h-28 w-1 bg-white"></div>
         {/* MOROCCAN PORTFOLIO COMPANIES */}
-        <div className="flex w-full flex-col items-center justify-center md:border-r">
+        <div className="flex w-full flex-col items-center justify-center">
           <ProgressInsightsCard
             title="MOROCCAN PORTFOLIO COMPANIES"
             value={
-              <p
-                className={`text-center text-3xl font-semibold text-white md:text-5xl lg:text-6xl ${font.className}`}
-              >
-                75%
-              </p>
+              <div className="flex h-36 flex-col items-start justify-end">
+                <p
+                  className={`text-5xl font-semibold text-white md:text-5xl lg:text-6xl ${merriweatherfont.className}`}
+                >
+                  75 <span className="text-lg md:text-xl">%</span>
+                </p>
+              </div>
             }
           />
         </div>
 
+        {/* vertical line */}
+        <div className="mt-10 h-28 w-1 bg-white"></div>
         {/* FUNDS DEDICATED TO DEEPTECH */}
         <div className="flex w-full flex-col items-center justify-center">
           <ProgressInsightsCard
             title="FUNDS DEDICATED TO DEEPTECH"
             value={
-              <p
-                className={`text-center text-3xl font-semibold text-white md:text-5xl lg:text-6xl ${font.className}`}
-              >
-                70%
-              </p>
+              <div className="flex h-36 flex-col items-start justify-end">
+                <p
+                  className={`text-5xl font-semibold text-white md:text-5xl lg:text-6xl ${merriweatherfont.className}`}
+                >
+                  70 <span className="text-lg md:text-xl">%</span>
+                </p>
+              </div>
             }
           />
         </div>
 
+        {/* vertical line */}
+        <div className="mt-10 h-28 w-1 bg-white"></div>
+
         {/* PORTFOLIO COMPANIES */}
-        <div className="flex w-full flex-col items-center md:border-l">
+        <div className="flex w-full flex-col items-center">
           <ProgressInsightsCard
             title="PORTFOLIO COMPANIES"
             value={
-              <span
-                className={`w-1/2 text-start text-3xl font-semibold text-white md:text-5xl lg:text-6xl ${font.className}`}
-              >
-                29
-              </span>
+              <div className="flex h-36 flex-col items-start justify-end">
+                <p
+                  className={`text-5xl font-semibold text-white md:text-5xl lg:text-6xl ${merriweatherfont.className}`}
+                >
+                  29
+                </p>
+              </div>
             }
           />
         </div>
@@ -80,9 +92,9 @@ type ProgressInsightsCardProps = {
 
 const ProgressInsightsCard = ({ title, value }: ProgressInsightsCardProps) => {
   return (
-    <div className="flex h-full w-full flex-col justify-end md:w-8/12 lg:w-9/12">
-      <div className="flex flex-row items-start">{value}</div>
-      <p className="mt-2 text-start text-sm font-light text-white md:text-base lg:text-lg">
+    <div className="flex h-52 w-72 flex-col items-start justify-between">
+      <div>{value}</div>
+      <p className="mt-2 h-12 text-start font-montserrat text-sm font-light text-white md:text-base lg:text-lg">
         {title}
       </p>
     </div>

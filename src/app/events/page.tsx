@@ -31,7 +31,7 @@ export default function Portfolio() {
       <div className="relative h-[30rem] w-full items-center justify-center">
         <div className="absolute h-full w-full flex-col items-center justify-center gap-4">
           <Image
-            src="/assets/gallary/img2.png"
+            src="/assets/background/bg.jpeg"
             alt="ventures"
             fill={true}
             className="object-cover"

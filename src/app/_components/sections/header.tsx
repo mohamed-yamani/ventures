@@ -157,7 +157,7 @@ export default function Header() {
 
                   <div className="h-0.125 w-full -translate-y-2 bg-white" />
                   <Link
-                    href={ROUTES.PORTFOLIO}
+                    href={ROUTES.RESOURCES}
                     className="flex w-full flex-row items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:text-secondary"
                   >
                     <span className="transition-colors duration-300">

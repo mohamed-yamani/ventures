@@ -1,30 +1,30 @@
-import { LucideIcon, Mail, MapPin, Phone } from "lucide-react";
+import { LucideIcon, Mail, MapPin } from "lucide-react";
 import Subtitle from "../common/subtitle";
 import Title from "../common/title";
 
 const GetInTouch = () => {
   return (
-    <div className="w-full items-center justify-center text-center">
-      <Title
-        className="text-2xl font-light text-secondary"
-        children={"GET IN TOUCH"}
-      />
-      <Subtitle
-        className="text-5xl text-primary"
-        children={"Get In Touch With Us"}
-      />
-      <div className="mb-28 mt-16 bg-primary">
-        <div className="container grid grid-cols-1 items-center justify-center gap-4 p-14 sm:grid-cols-3">
+    <div className="mt-10 w-full items-center justify-center text-center">
+      <Title className="text-2xl font-light text-secondary">GET IN TOUCH</Title>
+      <Subtitle className="text-5xl text-primary">
+        Get In Touch With Us
+      </Subtitle>
+      <div className="mt-28 bg-primary">
+        <div className="container grid grid-cols-1 items-start justify-center gap-4 py-20 sm:grid-cols-3">
           <ContactInfo
-            icon={Mail}
-            title="OUR EMAIL"
-            info="contact@um6pventures.ma"
+            icon={MapPin} //benguerir address
+            title="BEN GUERIR ADDRESS"
+            info="Lot 660, Hay Moulay Rachid – 43150 Benguerir"
           />
-          <ContactInfo icon={Phone} title="OUR PHONE" info="+212762887465438" />
           <ContactInfo
-            icon={MapPin}
+            icon={MapPin} // casablanca address
+            title="CASABLANCA ADDRESS"
+            info="Complexe PARANFA, 2 Rue Koronfal – Anfa, Casablanca"
+          />
+          <ContactInfo
+            icon={Mail} // OUR ADDRESS
             title="OUR ADDRESS"
-            info=" Lot 660, Ben Guerir 43150"
+            info=" contact@um6pventures.ma"
           />
         </div>
       </div>
@@ -46,8 +46,8 @@ function ContactInfo({ icon: Icon, title, info }: ContactInfoProps) {
         <Icon className="text-white" size={24} /> {/* Render the icon */}
         <p className="text-lg font-normal text-white">{title}</p>
       </div>
-      <div className="my-5 w-2/3 border border-b-0 border-white" />
-      <p className="text-start text-lg font-normal text-white">{info}</p>
+      <div className="my-5 w-9/12 border border-b-0 border-white" />
+      <p className="w-9/12 text-start text-lg font-normal text-white">{info}</p>
     </div>
   );
 }

@@ -55,15 +55,15 @@ const FooterSection = () => {
             </div>
           </div>
           <div>
-            <div className="flex flex-col items-start gap-3 text-white md:items-end">
+            <div className="flex flex-col items-start gap-3 text-lg text-white md:items-end">
               <Link href="" target="_blank">
                 <span>UM6P VENTURES NEWSLETTER</span>
               </Link>
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <ActionButton className="transform bg-secondary p-6 text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
-                    SUBSCRIBE TO NEWSLETTER
+                  <ActionButton className="mb-2 mt-8 w-72 transform rounded-none bg-secondary p-6 text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
+                    SUBSCRIBE HERE
                   </ActionButton>
                 </DialogTrigger>
                 <DialogContent
@@ -72,6 +72,25 @@ const FooterSection = () => {
                 >
                   <SubscribeToVentures />
                 </DialogContent>
+                <div className="flex w-72 flex-row gap-4">
+                  <SocialIcons
+                    src="/assets/social_icons/instagram.png"
+                    alt="instagram"
+                  />
+
+                  <SocialIcons
+                    src="/assets/social_icons/linkedin.png"
+                    alt="linkedin.png"
+                  />
+
+                  <SocialIcons src="/assets/social_icons/play.png" alt="x" />
+                  <SocialIcons src="/assets/social_icons/x.png" alt="x" />
+
+                  <SocialIcons
+                    src="/assets/social_icons/facebook.png"
+                    alt="x"
+                  />
+                </div>
               </Dialog>
             </div>
           </div>
@@ -82,22 +101,6 @@ const FooterSection = () => {
           <p className="font-normal">
             © 2024 UM6P Ventures. All rights reserved
           </p>
-          <div className="flex flex-row gap-4">
-            <SocialIcons
-              src="/assets/social_icons/instagram.png"
-              alt="instagram"
-            />
-
-            <SocialIcons
-              src="/assets/social_icons/linkedin.png"
-              alt="linkedin.png"
-            />
-
-            <SocialIcons src="/assets/social_icons/play.png" alt="x" />
-            <SocialIcons src="/assets/social_icons/x.png" alt="x" />
-
-            <SocialIcons src="/assets/social_icons/facebook.png" alt="x" />
-          </div>
         </div>
       </div>
     </footer>

@@ -50,26 +50,27 @@ export default function Portfolio() {
       <div className="relative h-[40rem] w-full items-center justify-center">
         <div className="absolute h-full w-full flex-col items-center justify-center gap-4">
           <Image
-            src="/assets/gallary/img2.png"
+            src="/assets/background/bg.jpeg"
             alt="ventures"
             fill={true}
             className="object-cover"
           />
-          <div className="absolute h-full w-full bg-primary opacity-90" />
+          <div className="absolute h-full w-full bg-primary opacity-80" />
         </div>
         <div className="absolute flex h-full w-full flex-col items-center justify-center text-center font-medium text-black">
           <Title className="pt-32 text-6xl text-white">
             Building the future of Africa
           </Title>
           <div className="flex flex-col items-center justify-center gap-4 py-9 sm:flex-row sm:justify-between">
-            <div className="flex min-w-max flex-row items-center justify-center bg-white px-3 sm:flex-grow">
+            <div className="flex min-w-[300px] flex-row items-center justify-center bg-white px-3 sm:min-w-max sm:flex-grow">
               <Search className="text-primary" />
               <Input
                 type="text"
                 placeholder="Discover our ventures ..."
-                className="w-full border-b border-white bg-transparent text-primary placeholder-primary caret-primary"
+                className="w-full border-b border-white bg-transparent text-primary placeholder-primary caret-primary sm:w-[300px] lg:w-[680px]"
               />
             </div>
+
             <Button className="w-full rounded-none bg-secondary font-normal text-primary text-white transition duration-300 ease-in-out hover:bg-white hover:text-primary sm:w-auto">
               SEARCH
             </Button>

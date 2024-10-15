@@ -1,106 +1,125 @@
-import { LucideIcon, Mail, Phone, MapPin } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import Subtitle from "../common/subtitle";
 import TeamMember from "../common/TeamMember";
 import Title from "../common/title";
 import Image from "next/image";
 import GetInTouch from "./GetInTouch";
+import ContactForm from "~/components/ui/ContactForm";
+
+const teamMembers = [
+  {
+    name: "Yassine Laghzioui",
+    role: "Chief Executive Officer",
+    imageSrc: "/assets/team/yassinelaghzioui.png",
+  },
+  {
+    name: "Sofia Zine-Eddine",
+    role: "Chief Finance Officer",
+    imageSrc: "/assets/team/SofiaZine-Eddine.png",
+  },
+  {
+    name: "Lamiaa El Amrani",
+    role: "Investment Director",
+    imageSrc: "/assets/team/lamiaaelamrani.png",
+  },
+  {
+    name: "Yassine Laghzioui",
+    role: "CEO",
+    imageSrc: "/assets/team/yassinelaghzioui.png",
+  },
+  {
+    name: "Sofia Zine-Eddine",
+    role: "Chief Finance Officer",
+    imageSrc: "/assets/team/SofiaZine-Eddine.png",
+  },
+  {
+    name: "Lamiaa El Amrani",
+    role: "Investment Director",
+    imageSrc: "/assets/team/lamiaaelamrani.png",
+  },
+  {
+    name: "Sofia Zine-Eddine",
+    role: "Chief Finance Officer",
+    imageSrc: "/assets/team/SofiaZine-Eddine.png",
+  },
+  {
+    name: "Lamiaa El Amrani",
+    role: "Investment Director",
+    imageSrc: "/assets/team/lamiaaelamrani.png",
+  },
+];
 
 const OurTeam = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden">
-      <div className="relative h-[30rem] w-full items-center justify-center">
+      {/* Hero Section */}
+      <div className="relative h-[600px] w-full items-center justify-center">
         <div className="absolute h-full w-full flex-col items-center justify-center gap-4">
           <Image
-            src="/assets/gallary/img2.png"
-            alt="ventures"
+            src="/assets/background/bg.jpeg"
+            alt="Background of our ventures"
             fill={true}
             className="object-cover"
+            priority
           />
-          <div className="absolute h-full w-full bg-primary opacity-90" />
+          <div className="absolute h-full w-full bg-primary opacity-80" />
         </div>
-        <div className="absolute flex h-full w-full flex-col items-center justify-center text-center font-medium text-black">
-          <Title className="mt-44 translate-y-7 text-2xl font-light text-secondary">
-            TEAM MEMBERS
-          </Title>
-          <Subtitle className="text-7xl text-white">Uv Team</Subtitle>
+        <div className="container relative mr-28 mt-20 flex h-full flex-col items-start justify-center text-center font-medium text-black">
+          <div className="flex h-2 w-24 flex-col items-center justify-center gap-4 bg-orange-600" />
+          <Subtitle className="text-3xl text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Meet the team
+          </Subtitle>
           <div className="grid grid-cols-1 items-center justify-center gap-4 p-0 py-9 sm:grid-cols-8"></div>
         </div>
       </div>
+
+      {/* Team Section */}
       <div className="container mx-auto mt-52">
-        <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          <TeamMember
-            name="Yassine Laghzioui"
-            role="Chief Executive Officer"
-            imageSrc="/assets/team/yassinelaghzioui.png"
-          />
-          <TeamMember
-            name="Sofia Zine-Eddine"
-            role="Chief Finance Officer"
-            imageSrc="/assets/team/SofiaZine-Eddine.png"
-          />
-          <TeamMember
-            name="Lamiaa El Amrani"
-            role="Investment Director"
-            imageSrc="/assets/team/lamiaaelamrani.png"
-          />
-          <TeamMember
-            name="Yassine Laghzioui"
-            role="CEO"
-            imageSrc="/assets/team/yassinelaghzioui.png"
-          />
-          <TeamMember
-            name="Sofia Zine-Eddine"
-            role="Chief Finance Officer"
-            imageSrc="/assets/team/SofiaZine-Eddine.png"
-          />
-          <TeamMember
-            name="Lamiaa El Amrani"
-            role="Investment Director"
-            imageSrc="/assets/team/lamiaaelamrani.png"
-          />
-          <TeamMember
-            name="Sofia Zine-Eddine"
-            role="Chief Finance Officer"
-            imageSrc="/assets/team/SofiaZine-Eddine.png"
-          />
-          <TeamMember
-            name="Lamiaa El Amrani"
-            role="Investment Director"
-            imageSrc="/assets/team/lamiaaelamrani.png"
-          />
+        <div className="grid grid-cols-1 gap-x-4 sm:grid-cols-2 md:grid-cols-3">
+          {teamMembers.map((member, index) => (
+            <TeamMember
+              key={index}
+              name={member.name}
+              role={member.role}
+              imageSrc={member.imageSrc}
+            />
+          ))}
         </div>
       </div>
 
+      {/* Testimonial Section */}
       <div className="mb-24 mt-24 h-[25rem] w-full bg-primary bg-gradient-to-r from-white to-[#bbd0e1]">
         <div className="container flex w-full flex-col items-start justify-center gap-4">
-          <div className="grid w-full grid-cols-1 grid-rows-1 items-center justify-center md:grid-cols-2">
-            <div className="flex flex-col items-start justify-center gap-4 p-4">
-              <p className="text-3xl font-semibold text-primary">
-                Our testimolials
+          <div className="grid w-full grid-cols-1 items-center justify-center md:grid-cols-2">
+            {/* Textual Testimonial */}
+            <div className="flex flex-col items-start justify-center gap-6 p-4">
+              <p className="text-3xl font-semibold text-primary sm:text-4xl">
+                Our Testimonials
               </p>
-              <p className="text-lg font-normal text-gray-800">
+              <blockquote className="text-justify text-lg font-normal text-gray-800">
                 Le lorem ipsum est, en imprimerie, une suite de mots sans
                 signification utilisée à titre provisoire pour calibrer une mise
-                en page, le texte définit 
-              </p>
+                en page, le texte définit.
+              </blockquote>
               <div>
                 <p className="text-lg font-normal text-gray-800">
-                  {/* Lamiaa El Amrani */}
                   LAAMIAA EL AMRANI
                 </p>
-                {/* Investment Director */}
                 <p className="text-lg font-normal text-secondary">
                   INVESTMENT DIRECTOR
                 </p>
               </div>
             </div>
-            <div className="items-top relative flex h-[25rem] w-full justify-center">
+
+            {/* Testimonial Image */}
+            <div className="items-top relative flex h-[400px] w-full justify-center">
               <div className="relative flex h-96 w-80 -translate-y-20 items-center justify-center bg-[#e9a25d]">
                 <Image
                   src="/assets/team/SofiaZine-Eddine.png"
-                  alt="ventures"
+                  alt="Sofia Zine-Eddine - Chief Finance Officer"
                   fill={true}
                   className="object-cover"
+                  priority
                 />
               </div>
               <div className="absolute h-16 w-20 translate-x-14 translate-y-80 bg-primary" />
@@ -110,29 +129,11 @@ const OurTeam = () => {
         </div>
       </div>
 
+      {/* Contact Section */}
       <GetInTouch />
+      <ContactForm />
     </main>
   );
 };
-
-// function for this info like mail and phone number and address
-interface ContactInfoProps {
-  icon: LucideIcon;
-  title: string;
-  info: string;
-}
-
-function ContactInfo({ icon: Icon, title, info }: ContactInfoProps) {
-  return (
-    <div className="">
-      <div className="flex items-center justify-start gap-4">
-        <Icon className="text-white" size={24} /> {/* Render the icon */}
-        <p className="text-lg font-normal text-white">{title}</p>
-      </div>
-      <div className="my-5 w-2/3 border border-b-0 border-white" />
-      <p className="text-lg font-normal text-white">{info}</p>
-    </div>
-  );
-}
 
 export default OurTeam;

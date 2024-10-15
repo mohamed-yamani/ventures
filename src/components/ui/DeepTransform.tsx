@@ -13,8 +13,8 @@ const DeepTransform = () => {
     skipSnaps: false,
     align: "center", // Center the active item
     containScroll: "trimSnaps", // Prevent over-scrolling
-    draggable: true, // Ensure good draggable control
-    speed: 10, // Slow down the scroll speed for touch devices
+    // dragFree: false, // Disable free dragging
+    // speed: 10, // Set the speed of the slider
   });
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [canScrollPrev, setCanScrollPrev] = React.useState(false);

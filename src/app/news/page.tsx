@@ -3,6 +3,8 @@ import Title from "../_components/common/title";
 import Subtitle from "../_components/common/subtitle";
 import { Button } from "~/components/ui/button";
 import { CircleArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ROUTES } from "~/utils/constants/routes";
 
 const images: { date: string; title: string; description: string }[] = [
   {
@@ -53,7 +55,7 @@ export default function Portfolio() {
       <div className="relative h-[30rem] w-full items-center justify-center">
         <div className="absolute h-full w-full flex-col items-center justify-center gap-4">
           <Image
-            src="/assets/gallary/img2.png"
+            src="/assets/background/bg.jpeg"
             alt="ventures"
             fill={true}
             className="object-cover"
@@ -85,6 +87,7 @@ export default function Portfolio() {
 interface NewsCardProps {
   description: string;
   date: string;
+
   title: string;
   key: number;
 }
@@ -111,13 +114,15 @@ function NewsCard({ description, date, title, key }: NewsCardProps) {
         {description}
       </p>
 
-      <div className="absolute bottom-8 left-8 flex flex-row items-center justify-start gap-6 bg-opacity-90">
-        <p className="text-lg text-secondary">
-          {/* read more */}
-          READ MORE
-        </p>
-        <CircleArrowRight className="text-secondary" />
-      </div>
+      <Link href={ROUTES.ARTICLEPAGE} className="absolute flex w-full">
+        <div className="absolute bottom-8 left-8 flex flex-row items-center justify-start gap-6 bg-opacity-90">
+          <p className="text-lg text-secondary">
+            {/* read more */}
+            READ MORE
+          </p>
+          <CircleArrowRight className="text-secondary" />
+        </div>
+      </Link>
     </div>
   );
 }

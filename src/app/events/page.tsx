@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Title from "../_components/common/title";
 import Subtitle from "../_components/common/subtitle";
-import { Button } from "~/components/ui/button";
 import { CircleArrowRight } from "lucide-react";
 
 const images: { src: string; link: string; date: string; title: string }[] = [

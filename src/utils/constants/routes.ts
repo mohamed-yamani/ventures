@@ -10,4 +10,5 @@ export const ROUTES = {
     RESOURCES: "/resources",
     NEWS: "/news",
     EVENTS: "/events",
+    ARTICLEPAGE: "/article_page",
 } as const;

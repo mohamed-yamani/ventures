@@ -62,7 +62,7 @@ const FooterSection = () => {
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <ActionButton className="mb-2 mt-8 w-72 transform rounded-none bg-secondary p-6 text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary">
+                  <ActionButton className="mb-2 mt-8 transform rounded-none bg-secondary p-6 text-white transition duration-300 ease-in-out hover:scale-105 hover:bg-white hover:text-secondary sm:w-72">
                     SUBSCRIBE HERE
                   </ActionButton>
                 </DialogTrigger>

@@ -26,6 +26,14 @@ const LinkedInLink = () => (
   </a>
 );
 
+const sections = [
+  "The UM6P Ventures’ Startup Showcase in collaboration with Plug and Play Morocco took place at University Mohamed 6 Polytechnic , StartGate at Ben Guerir, Morocco on October 18th, 2022. Preceded by a  reception the event kicked off with opening remarks made by Yasser Biaz, CEO of UM6P Ventures. Two panel sessions weretorganizedtfortthetevent.",
+  "The first panel session in the morning focused on “UM6P Ventures’ scientific and research network engagement model and the technology licensing use case”. Panelists represented UM6P Ventures, the UC Davis African Plant Breeding Academy (AfPBA), the Partnership for Skills in Applied Sciences, Engineering and Technology (PASET), the UM6P Technology Licensing Office and the UM6P Institut Supérieur des Sciences Biologiques et Paramédicales (ISSB-P). Members of the panel discussed multiple topics related to the startup journey from its inception, funding, technology licensing, IP strategies, Venture Builder support and much more. The panel brainstormed various challenges faced by startups and the requirements for a startup to be successful on its journey with examples from specific use cases.",
+  "The second panel convened after lunch and focused on “Insights into the Venture Builder Offer and real time Q&A with startups founders”. Panel members represented founders and C-suite executives from Agrobioscience startups (De Novo Dairy, Mogale Meat, Biotic, Maya Milk and ClimateCrop) and healthcare startups (Infiuss Health and Zuri Health). Panelists shared their thoughts and their own experiences working with UM6P Ventures. They highlighted how support from UM6P Ventures via capital and the Venture Builder Offer provides access to infrastructure, Subject Matter Expertise, Intellectual Property (IP), a vast partner and Venture Capital network, and access to scientific talent.",
+  "Attendees also benefited from a noteworthy discussion on the selection of a VC as a strategic investment partner and the steps to follow as they build their startups and navigate those tough initial few years. Overall it was a much needed and very interesting panel for upcoming startups and aspiring entrepreneurs.",
+  "The showcase event ended with a tour of the UM6P University campus facilities including the experimental farm, Agrobioscience Lab, the Material Science labs and others. Tours of the facilities showed that the infrastructure at UM6P is truly world class and on par with any leading globally reputed university. The startups expressed a lot of interest in using these facilities for their R&D projects.",
+];
+
 // Main ArticlePage component
 export default function ArticlePage() {
   return (
@@ -145,54 +153,11 @@ function HeroSection() {
 function ArticleContent() {
   return (
     <div className="prose max-w-none pt-16 font-montserrat">
-      <p className="mb-6">
-        The UM6P Ventures’ Startup Showcase in collaboration with Plug and Play
-        Morocco took place at University Mohamed 6 Polytechnic , StartGate at
-        Ben Guerir, Morocco on October 18th, 2022. Preceded by a  reception,
-         the event kicked off with opening remarks made by Yasser Biaz, CEO of
-        UM6P Ventures. Two panel sessions weretorganizedtfortthetevent.
-      </p>
-      <p className="mb-6">
-        The first panel session in the morning focused on “UM6P Ventures’
-        scientific and research network engagement model and the technology
-        licensing use case”. Panelists represented UM6P Ventures, the UC Davis
-        African Plant Breeding Academy (AfPBA), the Partnership for Skills in
-        Applied Sciences, Engineering and Technology (PASET), the UM6P
-        Technology Licensing Office and the UM6P Institut Supérieur des Sciences
-        Biologiques et Paramédicales (ISSB-P). Members of the panel discussed
-        multiple topics related to the startup journey from its inception,
-        funding, technology licensing, IP strategies, Venture Builder support
-        and much more. The panel brainstormed various challenges faced by
-        startups and the requirements for a startup to be successful on its
-        journey with examples from specific use cases.
-      </p>
-      <p className="mb-6">
-        The second panel convened after lunch and focused on “Insights into the
-        Venture Builder Offer and real time Q&A with startups founders”. Panel
-        members represented founders and C-suite executives from Agrobioscience
-        startups (De Novo Dairy, Mogale Meat, Biotic, Maya Milk and ClimateCrop)
-        and healthcare startups (Infiuss Health and Zuri Health). Panelists
-        shared their thoughts and their own experiences working with UM6P
-        Ventures. They highlighted how support from UM6P Ventures via capital
-        and the Venture Builder Offer provides access to infrastructure, Subject
-        Matter Expertise, Intellectual Property (IP), a vast partner and Venture
-        Capital network, and access to scientific talent.
-      </p>
-      <p className="mb-6">
-        Attendees also benefited from a noteworthy discussion on the selection
-         of a VC as a strategic investment partner and the steps to follow as
-        they build their startups and navigate those tough initial few years.
-        Overall it was a much needed and very interesting panel for upcoming
-        startups and aspiring entrepreneurs.
-      </p>
-      <p>
-        The showcase event ended with a tour of the UM6P University campus
-        facilities including the experimental farm, Agrobioscience Lab, the
-        Material Science labs and others. Tours of the facilities showed that
-        the infrastructure at UM6P is truly world class and on par with any
-        leading globally reputed university. The startups expressed a lot of
-        interest in using these facilities for their R&D projects.
-      </p>
+      {sections.map((section, index) => (
+        <p key={index} className={index === sections.length - 1 ? "" : "pb-5"}>
+          {section}
+        </p>
+      ))}
     </div>
   );
 }

@@ -31,8 +31,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 ${
-        isScrolled ? "bg-primary" : "bg-transparent"
+      className={`sticky top-0 z-50 w-screen border-b border-gray-200 border-opacity-50 transition-colors duration-300 sm:fixed ${
+        isScrolled ? "bg-primary" : "bg-primary sm:bg-transparent"
       }`}
     >
       <div className="container flex flex-row items-center justify-between py-2 transition-all duration-300">

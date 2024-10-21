@@ -1,7 +1,5 @@
-import { LucideIcon } from "lucide-react";
 import Subtitle from "../common/subtitle";
 import TeamMember from "../common/TeamMember";
-import Title from "../common/title";
 import Image from "next/image";
 import GetInTouch from "./GetInTouch";
 import ContactForm from "~/components/ui/ContactForm";
@@ -11,41 +9,65 @@ const teamMembers = [
     name: "Yassine Laghzioui",
     role: "Chief Executive Officer",
     imageSrc: "/assets/team/yassinelaghzioui.png",
+    description:
+      "Yassine Laghzioui is the CEO of Ventures. He is a serial entrepreneur with a background in finance and technology.",
+    slug: "yassine-laghzioui",
   },
   {
     name: "Sofia Zine-Eddine",
     role: "Chief Finance Officer",
     imageSrc: "/assets/team/SofiaZine-Eddine.png",
+    description:
+      "Sofia Zine-Eddine is the CFO of Ventures. She is a seasoned finance professional with a background in investment banking.",
+    slug: "sofia-zine-eddine",
   },
   {
     name: "Lamiaa El Amrani",
     role: "Investment Director",
     imageSrc: "/assets/team/lamiaaelamrani.png",
+    description:
+      "Lamiaa El Amrani is the Investment Director at Ventures. She is a seasoned investor with a background in private equity.",
+    slug: "lamiaa-el-amrani",
   },
   {
     name: "Yassine Laghzioui",
     role: "CEO",
     imageSrc: "/assets/team/yassinelaghzioui.png",
+    description:
+      "Yassine Laghzioui is the CEO of Ventures. He is a serial entrepreneur with a background in finance and technology.",
+    slug: "yassine-laghzioui",
   },
   {
     name: "Sofia Zine-Eddine",
     role: "Chief Finance Officer",
     imageSrc: "/assets/team/SofiaZine-Eddine.png",
+    description:
+      "Sofia Zine-Eddine is the CFO of Ventures. She is a seasoned finance professional with a background in investment banking.",
+    slug: "sofia-zine-eddine",
   },
   {
     name: "Lamiaa El Amrani",
     role: "Investment Director",
     imageSrc: "/assets/team/lamiaaelamrani.png",
+    description:
+      "Lamiaa El Amrani is the Investment Director at Ventures. She is a seasoned investor with a background in private equity.",
+    slug: "lamiaa-el-amrani",
   },
   {
     name: "Sofia Zine-Eddine",
     role: "Chief Finance Officer",
     imageSrc: "/assets/team/SofiaZine-Eddine.png",
+    description:
+      "Sofia Zine-Eddine is the CFO of Ventures. She is a seasoned finance professional with a background in investment banking.",
+    slug: "sofia-zine-eddine",
   },
   {
     name: "Lamiaa El Amrani",
     role: "Investment Director",
     imageSrc: "/assets/team/lamiaaelamrani.png",
+    description:
+      "Lamiaa El Amrani is the Investment Director at Ventures. She is a seasoned investor with a background in private equity.",
+    slug: "lamiaa-el-amrani",
   },
 ];
 
@@ -82,6 +104,8 @@ const OurTeam = () => {
               name={member.name}
               role={member.role}
               imageSrc={member.imageSrc}
+              description={member.description}
+              slug={member.slug}
             />
           ))}
         </div>

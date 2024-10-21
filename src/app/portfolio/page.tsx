@@ -10,6 +10,8 @@ import {
   PopoverTrigger,
 } from "~/components/ui/popover";
 import { Checkbox } from "~/components/ui/checkbox";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
+import CompanyDetailsPopup from "../_components/sections/CompanyDetailsPopup";
 
 const images: { src: string; link: string }[] = [
   { src: "/assets/companies/DEEPECHO.png", link: "/deepecho" },
@@ -100,22 +102,35 @@ export default function Portfolio() {
             return (
               <div
                 key={index}
-                className={`group relative z-10 flex aspect-video w-full origin-top transform cursor-pointer items-center justify-center gap-4 rounded-none border border-gray-300 py-6 transition-all duration-300 ease-in-out hover:z-[100] hover:border-none hover:bg-primary sm:w-[calc(50%-8px)] md:w-[calc(33%-8px)] lg:w-[calc(25%-8px)] ${
+                className={`group relative z-10 flex aspect-video w-full origin-top transform cursor-pointer items-center justify-center gap-4 rounded-none border border-gray-300 transition-all duration-300 ease-in-out hover:z-[100] hover:border-none hover:bg-primary sm:w-[calc(50%-8px)] md:w-[calc(33%-8px)] lg:w-[calc(25%-8px)] ${
                   isLastRow
                     ? "hover:-translate-y-[104%] hover:scale-y-[204%]" // Scale upwards for the last row
                     : "hover:scale-y-[204%]"
                 }`}
               >
-                {/* Fix the image size to prevent scaling */}
-                <div className="relative h-32 w-32 transform transition-all duration-300 ease-in-out group-hover:scale-y-[50%]">
-                  <Image
-                    src={src}
-                    alt={`Company ${index + 1}`}
-                    layout="fill"
-                    objectFit="contain"
-                    className="object-contain group-hover:brightness-0 group-hover:invert" // Ensure the image itself stays contained within the container
-                  />
-                </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="flex h-full w-full items-center justify-center">
+                      <div className="relative h-32 w-32 transform transition-all duration-300 ease-in-out group-hover:scale-y-[50%]">
+                        <Image
+                          src={src}
+                          alt={`Company ${index + 1}`}
+                          layout="fill"
+                          objectFit="contain"
+                          className="object-contain group-hover:brightness-0 group-hover:invert"
+                        />
+                      </div>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent
+                    className="flex h-4/5 w-full max-w-5xl items-center justify-center rounded-none border-none p-0"
+                    closeIconClassName="text-black size-6"
+                  >
+                    <div className="flex h-full w-full">
+                      <CompanyDetailsPopup />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             );
           })}

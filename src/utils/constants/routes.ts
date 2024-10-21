@@ -11,4 +11,6 @@ export const ROUTES = {
     NEWS: "/news",
     EVENTS: "/events",
     ARTICLEPAGE: "/article_page",
+    // TeamMemberProfile
+    TEAM_MEMBER_PROFILE: "/team_member_profile/[id]",
 } as const;
